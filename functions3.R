@@ -239,7 +239,7 @@ SortOutAllConnections <- function(dtfm){
     vec_2[i] <- sum(df_1[, 3])
   }
   df <- data.frame(uniq_specs, vec_1, vec_2, stringsAsFactors = FALSE)
-  colnames(df) <- c("Species", "Number Of Reactant Connections", "Number Of Product Connections")
+  colnames(df) <- c("Species", "Number Of \nReactant Connections", "Number Of \nProduct Connections")
   return(df)
 }
 
@@ -301,5 +301,6 @@ DataFrameOfsboTermsinAllModels <- function(direc, fls, mdls){
       df <- rbind(df, df1)
     }
   }
+  colnames(df) <- c("sboTerm", "Model ID", "Frequency")
   return(df)
 }
