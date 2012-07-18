@@ -1,4 +1,4 @@
-functionnames <- c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetStartDateStrings", "ConvertDateStringsToYears", "CummulativeNumberOfModelsInEachYear", "FindAllYears", "IdentifyAllModelsInAnyGivenYear", "GetAllSpeciesFromAYear", "CummulativeNumberOfSpeciesInEachYear")
+functionnames <- c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetParameters", "ProportionOfUnknownParameters", "ProportionOfUnknownParametersForallModels", "ProportionOfUnknownSpecies", "ProportionOfUnknownSpeciesForallModels")
 source("functions2.R")
 ##Getting The Required Information
 IDs <- GetAllModelIDs(Models)

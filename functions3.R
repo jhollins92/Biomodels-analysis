@@ -1,3 +1,85 @@
+GetStartDateStrings <- function(lst){
+  n <- length(lst)
+  z <- character(n)
+  for(i in 1:n){
+    mdl <- lst[[i]]
+    string_1 <- mdl@annotation
+    x <- strsplit(string_1, "<dcterms:W3CDTF>")
+    y <- strsplit(x[[1]][2], "T")
+    z[i] <- y[[1]][1]
+  }
+  return(z)
+}
+
+ConvertDateStringsToYears <- function(vec){
+  date <- as.Date(vec)
+  posixlt <- as.POSIXlt(d)
+  years <- posixlt$year + 1900
+  return(years)
+}
+
+CummulativeNumberOfModelsInEachYear <- function(years){
+  n <- max(years) - (min(years) - 1)
+  s <- numeric(n)
+  for(i in 1:n){
+    s[1] = sum(years==min(years))
+    for(j in 1:(n-1)){
+      year = min(years) + j
+      s[j+1] = s[j] +sum(years==year)
+    }
+  }
+  return(s)
+}
+
+FindAllYears <- function(years){
+  n <- max(years) - (min(years) - 1)
+  vec <- numeric(n)
+  for(i in 1:n){
+    vec[i] <- min(years) - 1 + i
+  }
+  return(vec)
+}
+
+IdentifyAllModelsInAnyGivenYear <- function(vector, year){
+  n <- length(vector)
+  for(i in 1:n){
+    if(vector[i] == year){
+      vector[i] = i
+    } else {
+      vector[i] = 0
+    }
+  }
+  z = vector[vector != 0]
+  return(z)
+}
+
+GetAllSpeciesFromAYear <- function(lst, vector){
+  n <- length(vector)
+  x <- list()
+  for(i in 1:n){
+    v <- vector[i]
+    mdl <- lst[[v]]
+    s <- sapply(species(mdl), id)
+    u <- names(s)
+    x[[i]] <- u
+  }
+  return(x)
+}
+
+CummulativeNumberOfSpeciesInEachYear <- function(lst, years){
+  lst_1 <- list()
+  n <- max(years) - min(years) + 1
+  s <- numeric(n)
+  for(i in 1:n){
+    yr <- 2004 + i
+    mdls <- IdentifyAllModelsInAnyGivenYear(years, yr)
+    lst_1[[i]] <- unlist(GetAllSpeciesFromAYear(lst, mdls))
+    u <- unlist(lst_1)
+    s[i] <- length(unique(u))
+  }
+  return(s)
+}
+
 GetSpeciesIDsForaModel <- function(mdl){
   specs <- mdl@species
   n <- length(specs)
@@ -164,91 +246,6 @@ SortOutAllConnections <- function(dtfm){
 AverageNumberOfConnections <- function(dtfm){
   Average <- (sum(dtfm[, 2]) + sum(dtfm[, 3]))/length(dtfm[, 1])
   return(Average)
-}
-
-GetParameters <- function(mdl){
-  lst <- list()
-  lst_1 <- list()
-  lst[[1]] <- (parameters(mdl))
-  reacts <- reactions(mdl)
-  n <- length(reacts)
-  if(n != 0){
-    for(i in 1:n){
-      react <- reacts[[i]]
-      paras <- react@kineticLaw@parameters
-      if(length(paras) != 0){
-        lst_1[[i]] <- paras
-      }
-    }
-  }
-  lst[[2]] <- unlist(lst_1) 
-  return(unlist(lst))
-}
-
-ProportionOfUnknownParameters <- function(paras){
-  n <- length(paras)
-  unknown_initial_value <- 0
-  known_initial_value <- 0
-  for(i in 1:n){
-    para <- paras[[i]]
-    if(length(para) != 0){
-      if(length(para@value) != 0){
-        known_initial_value <- known_initial_value + 1
-      } else {
-        unknown_initial_value <- unknown_initial_value + 1
-      }
-    }
-  }
-  total <- known_initial_value + unknown_initial_value
-  proportion <- unknown_initial_value/total
-  return(proportion)
-}
-
-ProportionOfUnknownParametersForallModels <- function(lst){
-  n <- length(lst)
-  vec <- numeric(n)
-  for(i in 1:n){
-    mdl <- lst[[i]]
-    params <- GetParameters(mdl)
-    unknown_params <- ProportionOfUnknownParameters(params)
-    vec[i] <- unknown_params  
-  }
-  return(vec)
-}
-
-ProportionOfUnknownSpecies <- function(mdl){
-  specs <- species(mdl)
-  n <- length(specs)
-  unknown_initial_value <- 0
-  known_initial_value <- 0
-  if(n != 0){
-    for(i in 1:n){
-      spec <- specs[[i]]
-      if(length(spec) != 0){
-        if(length(spec@initialAmount) == 0 & length(spec@initialConcentration) == 0){
-          unknown_initial_value <- unknown_initial_value + 1
-        } else {
-          known_initial_value <- known_initial_value + 1
-        }
-      }
-    }
-    total <- known_initial_value + unknown_initial_value
-    proportion <- unknown_initial_value/total
-  } else {
-    proportion <- -1
-  }
-  return(proportion)
-}
-
-ProportionOfUnknownSpeciesForallModels <- function(lst){
-  n <- length(lst)
-  vec <- numeric(n)
-  for(i in 1:n){
-    mdl <- lst[[i]]
-    unknown_specs <- ProportionOfUnknownSpecies(mdl)
-    vec[i] <- unknown_specs  
-  }
-  return(vec)
 }
 
 GetModelsboTerms <- function(direc, fl){
