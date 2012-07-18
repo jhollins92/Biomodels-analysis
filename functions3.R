@@ -13,7 +13,7 @@ GetStartDateStrings <- function(lst){
 
 ConvertDateStringsToYears <- function(vec){
   date <- as.Date(vec)
-  posixlt <- as.POSIXlt(d)
+  posixlt <- as.POSIXlt(date)
   years <- posixlt$year + 1900
   return(years)
 }
