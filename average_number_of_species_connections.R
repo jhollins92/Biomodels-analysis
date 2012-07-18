@@ -6,3 +6,4 @@ rm(allconnections)
 averagenumberofconnectionsperspecies <- AverageNumberOfConnections(ordereddataframe)
 averagenumberofconnectionsperspecies
 rm(list=functionnames)
+rm(functionnames)

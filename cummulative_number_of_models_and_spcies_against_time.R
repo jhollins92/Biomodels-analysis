@@ -8,3 +8,4 @@ cummulativenumberofspecies <- CummulativeNumberOfSpeciesInEachYear(Models, start
 plot(allyears, cummulativenumberofmodels, type="l", xlab="Years", ylab="Number of Models", main="Plot of Cummulative Number of Biomodels against Year")
 plot(allyears, cummulativenumberofspecies, type="l", xlab="Years", ylab="Number of Species", main="Plot of Cummulative Number of Species against Year")
 rm(list=functionnames)
+rm(functionnames)
