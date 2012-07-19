@@ -1,4 +1,4 @@
-functionnames <- c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetParameters", "ProportionOfUnknownParameters", "ProportionOfUnknownParametersForallModels", "ProportionOfUnknownSpecies", "ProportionOfUnknownSpeciesForallModels")
+functionnames <- c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "SummariseCompartmentData","NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetParameters", "ProportionOfUnknownParameters", "ProportionOfUnknownParametersForallModels", "ProportionOfUnknownSpecies", "ProportionOfUnknownSpeciesForallModels")
 source("functions2.R")
 IDs <- GetAllModelIDs(Models)
 comparts <- NumberofCompartmentsInEachModel(Models)

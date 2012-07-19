@@ -22,6 +22,19 @@ NumberofCompartmentsInEachModel <- function(lst){
   return(v)
 }
 
+SummariseCompartmentData <- function(vec){
+  ls <- list()
+  n <- max(vec)
+  vec1 <- numeric(n)
+  for(i in 1:n){
+    vec1[i] <- sum(vec == i)
+  }
+  vec2 <- seq(1:7)
+  ls[[1]] <- vec1
+  ls[[2]] <- vec2
+  return(ls)
+}
+
 NumberofSpeciesInEachModel <- function(lst){
   n <- length(lst)
   w = numeric(n)

@@ -1,10 +1,9 @@
-source("basic_model_information.R")
 ## Basic Model Information Plots
 dir.create("Graphs")
 
 ppi = 300
 png("Graphs/CompartmentBarplot.png", width=6*ppi, height=6*ppi, res=ppi)
-barplot(vec, names.arg=names, xlab="Number of Compartments", ylab="Frequency", main="Barplot of the Number of Compartments \n in each Biomodel", ylim=c(0,200)) 
+barplot(comparts[[1]], names.arg=comparts[[2]], xlab="Number of Compartments", ylab="Frequency", main="Barplot of the Number of Compartments \n in each Biomodel", ylim=c(0,200)) 
 dev.off()
 
 png("Graphs/SpeciesHistogram.png", width=6*ppi, height=6*ppi, res=ppi)
