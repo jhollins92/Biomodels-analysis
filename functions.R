@@ -2,7 +2,7 @@ library(rsbml)
 library(RCurl)
 library(httr)
 
-DownloadSBMLFiles <- function(){
+DownloadSBMLFiles = function(){
   dest = "sbml_download"
   dest_tar = paste(dest, "tar", sep=".")
   dest_tar_bz2 = paste(dest_tar, "bz2", sep=".")
@@ -14,37 +14,37 @@ DownloadSBMLFiles <- function(){
     download.file(paste(base_url, arc_tar_bz2, sep=""), dest_tar_bz2)
     system(paste("bunzip2 ", dest_tar_bz2))
     system(paste("tar xvf ", dest_tar))
-    renamesucess <- file.rename(arc, "sbml_models")
+    renamesucess = file.rename(arc, "sbml_models")
   } else {
-    renamesucess <- "DownloadFailed"
+    renamesucess = "DownloadFailed"
   }
   return(renamesucess)
 }
 
-GetTheFilesThatWork <- function(direc){
-  l <- list.files(direc)
-  n <- length(l)
-  lst <- list()
+GetTheFilesThatWork = function(direc){
+  l = list.files(direc)
+  n = length(l)
+  lst = list()
   for(i in 1:n){
-    fl <- paste("sbml_models/curated", "/" ,l[i], sep="")
-    lst[[i]] <- try(rsbml_read(fl, dom=FALSE), silent=TRUE)
+    fl = paste("sbml_models/curated", "/" ,l[i], sep="")
+    lst[[i]] = try(rsbml_read(fl, dom=FALSE), silent=TRUE)
     if(class(lst[[i]]) == "SBMLDocument"){
-     dom <- try(rsbml_dom(lst[[i]]), silent=TRUE)
+     dom = try(rsbml_dom(lst[[i]]), silent=TRUE)
       if(class(dom) != "SBML"){
-        lst[[i]] <- "Model Doesn't Work"
+        lst[[i]] = "Model Doesn't Work"
       }
     } else {
-      lst[[i]] <- "Model Doesn't Work"
+      lst[[i]] = "Model Doesn't Work"
     }
   }
   return(lst[lst != "Model Doesn't Work"])
 }
 
-GetModels <- function(lst){
-  n <- length(lst)
+GetModels = function(lst){
+  n = length(lst)
   for(i in 1:n){
-    lst[[i]] <- rsbml_dom(lst[[i]])
-    lst[[i]] <- model(lst[[i]])
+    lst[[i]] = rsbml_dom(lst[[i]])
+    lst[[i]] = model(lst[[i]])
   }
   return(lst)
 }
