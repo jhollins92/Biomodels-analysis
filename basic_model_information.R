@@ -1,5 +1,5 @@
 functionnames <- c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetParameters", "ProportionOfUnknownParameters", "ProportionOfUnknownParametersForallModels", "ProportionOfUnknownSpecies", "ProportionOfUnknownSpeciesForallModels")
-source("functions2.R", echo=TRUE)
+source("functions2.R")
 IDs <- GetAllModelIDs(Models)
 comparts <- NumberofCompartmentsInEachModel(Models)
 n <- max(comparts)
