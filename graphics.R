@@ -3,7 +3,7 @@ dir.create("Graphs")
 
 ppi = 300
 png("Graphs/CompartmentBarplot.png", width=6*ppi, height=6*ppi, res=ppi)
-barplot(compartsummary[[1]], names.arg=compartsummary[[2]], xlab="Number of Compartments", ylab="Frequency", main="Barplot of the Number of Compartments \n in each Biomodel", ylim=c(0,200)) 
+barplot(comparts_summary[[1]], names.arg=comparts_summary[[2]], xlab="Number of Compartments", ylab="Frequency", main="Barplot of the Number of Compartments \n in each Biomodel", ylim=c(0,200)) 
 dev.off()
 
 png("Graphs/SpeciesHistogram.png", width=6*ppi, height=6*ppi, res=ppi)
