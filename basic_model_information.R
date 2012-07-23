@@ -1,7 +1,7 @@
 functionnames = c("GetAllModelIDs", "NumberofCompartmentsInEachModel", "SummariseCompartmentData","NumberofSpeciesInEachModel", "NumberofReactionsInEachModel", "NumberofGlobalParametersInEachModel", "NumberofLocalParametersInEachModel", "GetParameters", "ProportionOfUnknownParameters", "ProportionOfUnknownParametersForallModels", "ProportionOfUnknownSpecies", "ProportionOfUnknownSpeciesForallModels")
 source("functions2.R")
 IDs = GetAllModelIDs(Models)
-comparts_sumary = SummariseCompartmentData(NumberofCompartmentsInEachModel(Models))
+comparts_summary = SummariseCompartmentData(NumberofCompartmentsInEachModel(Models))
 specs = NumberofSpeciesInEachModel(Models)
 reacts = NumberofReactionsInEachModel(Models)
 globalparams = NumberofGlobalParametersInEachModel(Models)

@@ -239,7 +239,7 @@ SortOutAllConnections = function(dtfm){
     vec_2[i] = sum(df_1[, 3])
   }
   df = data.frame(uniq_specs, vec_1, vec_2, stringsAsFactors = FALSE)
-  colnames(df) = c("Species", "Number Of \nReactant Connections", "Number Of \nProduct Connections")
+  colnames(df) = c("Species ID", "Reactant", "Product")
   return(df)
 }
 

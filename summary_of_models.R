@@ -10,6 +10,6 @@ localparameterspresent = localparams != 0
 unknowparmetersproportions = ProportionOfUnknownParametersForallModels(Models)
 unknowspeciesproportions = ProportionOfUnknownSpeciesForallModels(Models)
 df = data.frame(IDs, comparts, specs, reacts, globalparams, localparameterspresent, localparams, unknowspeciesproportions, unknowparmetersproportions, stringsAsFactors = FALSE)
-colnames(df) = c("Model ID", "Number of \nCompartments", "Number of \nSepcies", "Number of \nReactions", "Number of \nGlobal Parameters", "Local Parameters \nPresent?", "Number of \nLocal Parameters", "Proportion of Species \nwith Unknown Inital \nAmount/Concentration", "Proportion of Parameters \nwith Unknown Initial Values")
+colnames(df) = c("Model ID", "Compartments", "Species", "Reactions", "GlobalParameters", "LocalParametersPresent?", "Local Parameters", "UnknownSpecies", "UnknownParameters")
 rm(list=functionnames)
 rm(functionnames)
