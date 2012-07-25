@@ -92,9 +92,9 @@ GetSpeciesIDsForaModel = function(mdl){
   return(Spec_IDs)
 }
 
-OrderSpeciesIDs = function(mdl, vec_1){
+OrderSpeciesIDs = function(mdl){
+  vec_1 = character()
   vec_2 = character()
-  vec_3 = character()
   lst = mdl@reactions
   lst_3 = list()
   n = length(lst)
@@ -107,38 +107,31 @@ OrderSpeciesIDs = function(mdl, vec_1){
       m = length(lst_1)
       if(m != 0){
         for(j in 1:m){
-          vec_2[k] = lst_1[[j]]@species
+          vec_1[k] = lst_1[[j]]@species
           k = k + 1
         }
       }
       l = length(lst_2)
       if(l != 0){
         for(j in 1:l){
-          vec_3[k_1] = lst_2[[j]]@species
+          vec_2[k_1] = lst_2[[j]]@species
           k_1 = k_1 + 1
         }
       }
     }
-    lst_3[[1]] = vec_2
-    lst_3[[2]] = vec_3
-    vec_4 = unique(unlist(lst_3))
+    lst_3[[1]] = vec_1
+    lst_3[[2]] = vec_2
+    vec_3 = unique(unlist(lst_3))
   } else {
-    vec_4 = character(0)
+    vec_3 = character(0)
   }
-  return(vec_4)
+  return(vec_3)
 }
 
-GetUniqueSpecies = function(filenames){
-  mdls = GetModels(filenames)
-  n = length(mdls)
+GetUniqueSpecies = function(mdl){
   lst = list()
-  for(i in 1:n){
-    mdl = mdls[[i]]
-    specs = GetModelSpecies(mdl)
-    spec_IDs = GetSpeciesIDs(specs)
-    ordered_IDs = OrderSpeciesIDs(mdl, spec_IDs)
-    lst[[i]] = ordered_IDs
-  }
+  lst[[1]] = OrderSpeciesIDs(mdl)
+  lst[[2]] = GetSpeciesIDsForaModel(mdl)
   x = unlist(lst)
   x_1 = unique(x)
   return(x_1)
@@ -187,28 +180,36 @@ ReactionConnections = function(react, spec){
 }
 
 GetAllConnectionsInAModel = function(mdl){
-  spec_IDs = GetSpeciesIDsForaModel(mdl)
-  ordered_spec_IDs = OrderSpeciesIDs(mdl, spec_IDs)
+  spec_IDs = GetUniqueSpecies(mdl)
   reacts = mdl@reactions
   m = length(reacts)
-  n = length(ordered_spec_IDs)
-  vec_1 = numeric(n)
+  n = length(spec_IDs)
+  vec = spec_IDs
+  vec_1 = character(n)
+  if(n != 0){
+    if(length(id(mdl)) != 0){
+      vec_1[1:n] = id(mdl)
+    } else {
+      vec_1[1:n] = name(mdl)
+    }
+  }
   vec_2 = numeric(n)
+  vec_3 = numeric(n)
   if(n != 0){
     if(m != 0){
       for(i in 1:n){
-        spec = ordered_spec_IDs[i]
+        spec = spec_IDs[i]
         for(j in 1:m){
           react = reacts[[j]]
           connects = ReactionConnections(react, spec)
-          vec_1[i] = vec_1[i] + connects[1]
-          vec_2[i] = vec_2[i] + connects[2]
+          vec_2[i] = vec_2[i] + connects[1]
+          vec_3[i] = vec_3[i] + connects[2]
         }
       }
     }
   }
-  vec = ordered_spec_IDs
-  df = data.frame(vec, vec_1, vec_2, stringsAsFactors = FALSE)
+  vec_4 = vec_2 + vec_3
+  df = data.frame(vec, vec_1, vec_2, vec_3, vec_4, stringsAsFactors = FALSE)
   return(df)
 }
 
@@ -230,21 +231,24 @@ SortOutAllConnections = function(dtfm){
   specs = dtfm[, 1]
   uniq_specs = unique(specs)
   n = length(uniq_specs)
-  vec_1 = numeric(n)
+  vec_1 = character(n)
   vec_2 = numeric(n)
+  vec_3 = numeric(n)
   for(i in 1:n){
     spec = uniq_specs[i]
     df_1 = dtfm[dtfm[, 1] == spec, ]
-    vec_1[i] = sum(df_1[, 2])
+    vec_1[i] = toString(df_1[, 2])
     vec_2[i] = sum(df_1[, 3])
+    vec_3[i] = sum(df_1[, 4])
   }
-  df = data.frame(uniq_specs, vec_1, vec_2, stringsAsFactors = FALSE)
-  colnames(df) = c("Species ID", "Reactant", "Product")
+  vec_4 = vec_2 + vec_3
+  df = data.frame(uniq_specs, vec_1, vec_2, vec_3, vec_4, stringsAsFactors = FALSE)
+  colnames(df) = c("Species ID", "Models", "Reactant", "Product", "Total")
   return(df)
 }
 
 AverageNumberOfConnections = function(dtfm){
-  Average = (sum(dtfm[, 2]) + sum(dtfm[, 3]))/length(dtfm[, 1])
+  Average = (sum(dtfm[, 5]))/length(dtfm[, 1])
   return(Average)
 }
 
