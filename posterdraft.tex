@@ -47,9 +47,7 @@
   }
   
  \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
- Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database is composed of two branches; the curated branch and the non-curated branch. This project focused on the curated branch of the database.
- 
- All the models in the curated section of BioModels Database have been described in peer-reviewed scientific literature and are compliant with the standard of model curation and annotation. Currently, there are 421 curated models in the database.
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database is composed of two branches, of these is the curated branch, which is the focus of this project. There are currently 421 models in the curated branch. These models have been described in peer reviewed sceintific literature.
  
  One of the languages used by modellers submitting to the biomodels datbase is SBML. The models can also be downloaded from the database in SBML format.
  
@@ -65,7 +63,7 @@
  
  \headerbox{Some Pretty Pictures}{name=prettypictures,column=2,row=0,span=2}{
  \begin{tabular}{l r}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{SpeciesHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{ReactionsHistogram.png}\\
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png}\\
  \end{tabular}
  
  \begin{multicols}{2}
@@ -76,7 +74,7 @@
  \end{multicols}
  
  \begin{tabular}{l r}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{LocalParametersHistogram.png}\\
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png}\\
  \end{tabular}
  
  \begin{multicols}{2}
@@ -95,8 +93,8 @@
  }
  
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{CummulativeModelsPlot.png}
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{CummulativeSpeciesPlot.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
  \begin{multicols}{2}
  
  The above graphs shows how the numebr of biomodels in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shwon in the graph, the increse in the number of models is not linear, instead it appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time, as well as the number of models in the datbase.
@@ -132,11 +130,15 @@ mathematical symbols.
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction (either as a reactant or product). 
+ In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction.\\
  
- If the species is a reactant in a reaction, the species has a reactant connection in that reaction. If the species is a product in a reaction, the species has a reactant connection in that product.
+ Consider the following set of reactions:
  
- In the project, 5732 reactions and 3408 species were extracted and examined in order to calculate the average number of connections per species. It was found that the average number of connections per species is 5.334 (to 3 decimal places). 
+ \includegraphics[scale=0.4]{Poster-images/connectiondrawing.png}
+ 
+ Since A appears twice as a reactant, it has 2 connections. Since B appears as a product oncce and a reactnat once, it has two connections in total (one reactant and one product). D appears as product once and so only has one connection.\\
+ 
+ The average number of connections per species in the database is 5.334 (to 3 decimal places). 
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
