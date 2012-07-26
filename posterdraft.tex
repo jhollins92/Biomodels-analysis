@@ -1,0 +1,148 @@
+\documentclass[portrait,a0paper,fontscale=0.35]{baposter}
+
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{bm}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\begin{document}
+
+\begin{poster}{
+  grid=false,
+  columns=4,
+  colspacing=1em,
+  bgColorOne=white,
+  bgColorTwo=white,
+  borderColor=blue,
+  headerColorOne=black,
+  headerColorTwo=blue,
+  headerFontColor=white,
+  boxColorOne=white,
+  boxColorTwo=blue,
+  textborder=roundedleft,
+  eyecatcher=true,
+  headerborder=closed,
+  headerheight=0.1\textheight,
+  headershape=roundedright,
+  headershade=shadelr,
+  headerfont=\Large\bf\textsc,
+  textfont={\setlength{\parindent}{1.5em}},
+  boxshade=plain,
+  background=plain,
+  linewidth=2pt
+  }
+  {
+  }
+  {\bf\textsc{Analysis of the Biomodels Database}\vspace{0.5em}}
+  {Unknown Author}
+  {
+  }
+  
+ \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database is composed of two branches; the curated branch and the non-curated branch. This project focused on the curated branch of the database.
+ 
+ All the models in the curated section of BioModels Database have been described in peer-reviewed scientific literature and are compliant with the standard of model curation and annotation. Currently, there are 421 curated models in the database.
+ 
+ One of the languages used by modellers submitting to the biomodels datbase is SBML. The models can also be downloaded from the database in SBML format.
+ 
+ }
+  
+  \headerbox{SBML}{name=sbml, column=1,row=0}{
+  Systems Biology Markup Language (SBML) is an eXtensible Markup Language (XML) encoding of the reaction list, together with additional information required for quantitative modelling and simulation.
+  
+  SBML is used to represent biochemical networks in a way that is convinient for a computer to generate and parse. This allows the models to be communicated between disparate modelling and simulation tools.
+  
+  Whilst SBML is a good format to parse and generate, it is very difficult for humans to read and write. In order to extract infomation from the models during the project, the SBML files were first read into R and transformed into objects that could be worked with in R.
+  }
+ 
+ \headerbox{Some Pretty Pictures}{name=prettypictures,column=2,row=0,span=2}{
+ \begin{tabular}{l r}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{SpeciesHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{ReactionsHistogram.png}\\
+ \end{tabular}
+ 
+ \begin{multicols}{2}
+ The above graph is a histogram of the number of speceis in each biomodel. As shown above, most biomodels have a low number of species with almost a third of the models having 10 or less species, whilst only a few have more than 100.\\
+   
+ The above graph is a histogram of the number of reactions in each biomodel. As shown above, most biomodels have a low number of reactions with over half of the models having 10 or less reactions, whilst only a few have more than 100.\\
+ 
+ \end{multicols}
+ 
+ \begin{tabular}{l r}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{LocalParametersHistogram.png}\\
+ \end{tabular}
+ 
+ \begin{multicols}{2}
+ The above graph is a histogram of the number of global parameters in each biomodel. As shown above, most biomodels have a low number of global parameters with over half of the models having 10 or less global parameters, whilst only a few have more than 100.\\
+      
+  The above graph is a histogram of the number of local parameters in each biomodel. As shown above, most biomodels have a low number of local parameters with over half of the models having 10 or less local parameters, whilst only a few have more than 100.\\
+ \end{multicols}
+ }
+ 
+ \headerbox{References}{name=sboterms,column=0,above=bottom}{
+ 
+ }
+ 
+ \headerbox{Conlcusion}{name=conclusion,column=1,above=bottom}{
+ 
+ }
+ 
+ \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{CummulativeModelsPlot.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{CummulativeSpeciesPlot.png}
+ \begin{multicols}{2}
+ 
+ The above graphs shows how the numebr of biomodels in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shwon in the graph, the increse in the number of models is not linear, instead it appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time, as well as the number of models in the datbase.
+ 
+ There is only a small increase in the number of models in the databse in 2012. This is expected since the archive used in the project was the July 2012 archive.\\
+ 
+ The above graphs shows how the numebr of species in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shown in the graph, the increse in the number of species is slightly more random than for the number of models. There is no clear pattern, except that a large increase in one year precedes a smaller increase in the next year.
+ 
+ There is only a small increase in the number of species in the databse in 2012. This is expected since the archive used in the project was the July 2012 archive, which means that as it is expected that less models would be added to the database in 2012, it is also expected that less species would be added.\\
+ 
+ \end{multicols}
+ }
+ 
+ \headerbox{R}{name=r,column=0,span=2,below=sbml}{
+ R is a computer package that is widely used for statistical software
+development and data analysis. The system
+provides a wide variety of statistical and graphical techniques.
+ 
+ R is highly extensible through the use of user-submitted libraries for
+specific functions or specific areas of study. An example of this is the package rsbml, which was used in order to read models into R and extract information from the models.
+ 
+ A particular strength of R is its graphical facilities, which produce quality graphs that can include
+mathematical symbols.
+ }
+ 
+ \headerbox{Terms}{name=terms,column=0,span=2,below=r}{
+ Each model consists of lists of one or more of these components; 
+  \begin{itemize}
+  \item Species: A species is a type of entity that can participate reactions. These can range from chemicals such as ions or molecules to binding sites on proteins.
+  \item Reaction: A statement describing a process that changes the amount of one or more species. For example, this could be a process by which certain entities (reactants) are transformed into certain other entities (products). Each reaction has an associated kinetic law describing how quickly the reaction takes place.
+  \item Parameter: The term used to refer to named quantities, which could be constannts or variables. Parameters may be defined in a list outside of any reaction or in a particular reaction. In this project, parameters defined of any reaction are defined as 'Global' since these parameters may occur in multiple kinetic laws in the model. Parameters defined in a reaction are defined as 'Local' since these parameters will usually only occur in a model in the reaction where thery are defined.
+  \end{itemize}
+ }
+ 
+  \headerbox{Connections}{name=connections,column=0,below=terms}{
+ In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction (either as a reactant or product). 
+ 
+ If the species is a reactant in a reaction, the species has a reactant connection in that reaction. If the species is a product in a reaction, the species has a reactant connection in that product.
+ 
+ In the project, 5732 reactions and 3408 species were extracted and examined in order to calculate the average number of connections per species. It was found that the average number of connections per species is 5.334 (to 3 decimal places). 
+ }
+ 
+ \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
+ 
+ }
+ 
+\end{poster}
+
+\end{document}
