@@ -86,6 +86,12 @@ NumberofLocalParametersInEachModel = function(lst){
   return(z)
 }
 
+RatioOfSpeciesToReactions = function(vec, vec1){
+  df = data.frame(vec, vec1, stringsAsFactors=FALSE)
+  df = df[df[ ,2] != 0, ]
+  return(df[,1]/df[,2])
+}
+
 GetParameters = function(mdl){
   lst = list()
   lst_1 = list()

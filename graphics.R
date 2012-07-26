@@ -22,6 +22,9 @@ png("Graphs/LocalParametersHistogram.png", width=6*ppi, height=6*ppi, res=ppi)
 hist(localparams[localparams < 400], breaks = 20, xlim=c(0, 400), ylim=c(0, 250), xlab="Number of Local Parameters", ylab="Frequency", main="Histogram of the Number of Local Parameters \n in each Biomodel")
 dev.off()
 
+png("Graphs/SpeciesOverReactions.png", width=6*ppi, height=6*ppi, res=ppi)
+hist(spectoreactratio, ylim=c(0, 100), xlab="Ratio of Species over Reactions", main="Histogram of the Ratio of Species over Reactions for Each Biomodel")
+dev.off()
 ## Number of Models and Species against Time Plots
 
 png("Graphs/CummulativeModelsPlot.png", width=6*ppi, height=6*ppi, res=ppi)
