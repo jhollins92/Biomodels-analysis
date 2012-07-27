@@ -61,28 +61,18 @@
   Whilst SBML is a good format to parse and generate, it is very difficult for humans to read and write. In order to extract infomation from the models during the project, the SBML files were first read into R and transformed into objects that could be worked with in R.
   }
  
- \headerbox{Some Pretty Pictures}{name=prettypictures,column=2,row=0,span=2}{
- \begin{tabular}{l r}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png}\\
- \end{tabular}
- 
+ \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
  \begin{multicols}{2}
- The above graph is a histogram of the number of speceis in each biomodel. As shown above, most biomodels have a low number of species with almost a third of the models having 10 or less species, whilst only a few have more than 100.\\
-   
- The above graph is a histogram of the number of reactions in each biomodel. As shown above, most biomodels have a low number of reactions with over half of the models having 10 or less reactions, whilst only a few have more than 100.\\
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesHistogram.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesOverReactions.png}
  
- \end{multicols}
- 
- \begin{tabular}{l r}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png}\\
- \end{tabular}
- 
- \begin{multicols}{2}
- The above graph is a histogram of the number of global parameters in each biomodel. As shown above, most biomodels have a low number of global parameters with over half of the models having 10 or less global parameters, whilst only a few have more than 100.\\
-      
-  The above graph is a histogram of the number of local parameters in each biomodel. As shown above, most biomodels have a low number of local parameters with over half of the models having 10 or less local parameters, whilst only a few have more than 100.\\
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png} 
+  The two graphs above show the number of species and reactions for each biomodel. As shown above, the patterns are very similar with the majority of models having less than 20 species and reactions and only a small number having more than 100 species or reactions.
+  
+  The graph to the left is a histogram of the ratio of species to reactants in each biomodel. As shown in the graph, the most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggests that either the reactions in the models tend to involve only a couple of species and that the species in each model tend to be involved in multiple reactions.
  \end{multicols}
  }
+ 
  
  \headerbox{References}{name=sboterms,column=0,above=bottom}{
  
@@ -134,7 +124,7 @@ mathematical symbols.
  
  Consider the following set of reactions:
  
- \includegraphics[scale=0.4]{Poster-images/connectiondrawing.png}
+ \includegraphics[scale=0.5]{Poster-images/connectiondrawing.png}
  
  Since A appears twice as a reactant, it has 2 connections. Since B appears as a product oncce and a reactnat once, it has two connections in total (one reactant and one product). D appears as product once and so only has one connection.\\
  
@@ -144,6 +134,13 @@ mathematical symbols.
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
  
  }
+ 
+ \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
+ \begin{tabular}{l r}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png}\\
+ \end{tabular}
+ }
+ 
  
 \end{poster}
 

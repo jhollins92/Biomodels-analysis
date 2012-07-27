@@ -23,14 +23,14 @@ hist(localparams[localparams < 400], breaks = 20, xlim=c(0, 400), ylim=c(0, 250)
 dev.off()
 
 png("Graphs/SpeciesOverReactions.png", width=6*ppi, height=6*ppi, res=ppi)
-hist(spectoreactratio, ylim=c(0, 100), xlab="Ratio of Species over Reactions", main="Histogram of the Ratio of Species over Reactions for Each Biomodel")
+hist(spectoreactratio, ylim=c(0, 100), xlab="Ratio of Species over Reactions", main="Histogram of the Ratio of Species over Reactions\n for Each Biomodel")
 dev.off()
 ## Number of Models and Species against Time Plots
 
 png("Graphs/CummulativeModelsPlot.png", width=6*ppi, height=6*ppi, res=ppi)
-plot(allyears, cummulativenumberofmodels, type="l", xlab="Years", ylab="Number of Models", main="Plot of Cummulative Number of Biomodels against Year")
+plot(allyears, cummulativenumberofmodels, type="l", xlab="Years", ylab="Number of Models", main="Plot of Cummulative Number of\n Biomodels against Year")
 dev.off()
 
 png("Graphs/CummulativeSpeciesPlot.png", width=6*ppi, height=6*ppi, res=ppi)
-plot(allyears, cummulativenumberofspecies, type="l", xlab="Years", ylab="Number of Species", main="Plot of Cummulative Number of Species against Year")
+plot(allyears, cummulativenumberofspecies, type="l", xlab="Years", ylab="Number of Species", main="Plot of Cummulative Number of\n Species against Year")
 dev.off()
