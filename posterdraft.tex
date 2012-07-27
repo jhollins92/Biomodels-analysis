@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{relsize}
+\usepackage{multicol}
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{bm}
@@ -53,12 +54,16 @@
  
  }
   
-  \headerbox{SBML}{name=sbml, column=1,row=0}{
-  Systems Biology Markup Language (SBML) is an eXtensible Markup Language (XML) encoding of the reaction list, together with additional information required for quantitative modelling and simulation.
-  
-  SBML is used to represent biochemical networks in a way that is convinient for a computer to generate and parse. This allows the models to be communicated between disparate modelling and simulation tools.
-  
-  Whilst SBML is a good format to parse and generate, it is very difficult for humans to read and write. In order to extract infomation from the models during the project, the SBML files were first read into R and transformed into objects that could be worked with in R.
+  \headerbox{R}{name=r, column=1,row=0}{
+  R is a computer package that is widely used for statistical software
+development and data analysis. The system
+provides a wide variety of statistical and graphical techniques.
+ 
+ R is highly extensible through the use of user-submitted libraries for
+specific functions or specific areas of study. An example of this is the package rsbml, which was used in order to read models into R and extract information from the models.
+ 
+ A particular strength of R is its graphical facilities, which produce quality graphs that can include
+mathematical symbols.
   }
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
@@ -67,9 +72,9 @@
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesOverReactions.png}
  
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png} 
-  The two graphs above show the number of species and reactions for each biomodel. As shown above, the patterns are very similar with the majority of models having less than 20 species and reactions and only a small number having more than 100 species or reactions.
-  
-  The graph to the left is a histogram of the ratio of species to reactants in each biomodel. As shown in the graph, the most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggests that either the reactions in the models tend to involve only a couple of species and that the species in each model tend to be involved in multiple reactions.
+ The top left grpah is the histogram of the number of species in each biomodel. The majority of models have less than 20 species.
+  This suggests that the majority of models have a small number of species. The histogram of reactions, the top right graph, displays a similar pattern, suggesting that the majority of models have a small number of species.
+  The graph to the left is a histogram of the ratio of species to reactants in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggest that the ratio of species to reactions is not particularly high for most models.
  \end{multicols}
  }
  
@@ -83,40 +88,32 @@
  }
  
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
  \begin{multicols}{2}
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
+ The above graphs shows how the number of biomodels in the curated branch of the database has varied over time, since  the first models were submitted. The increase in the number of models appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time.
+ The small increase in the number of models in the curated branch in 2012 is expected since the archive used in the project was the July 2012 archive.
  
- The above graphs shows how the numebr of biomodels in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shwon in the graph, the increse in the number of models is not linear, instead it appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time, as well as the number of models in the datbase.
- 
- There is only a small increase in the number of models in the databse in 2012. This is expected since the archive used in the project was the July 2012 archive.\\
- 
- The above graphs shows how the numebr of species in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shown in the graph, the increse in the number of species is slightly more random than for the number of models. There is no clear pattern, except that a large increase in one year precedes a smaller increase in the next year.
- 
- There is only a small increase in the number of species in the databse in 2012. This is expected since the archive used in the project was the July 2012 archive, which means that as it is expected that less models would be added to the database in 2012, it is also expected that less species would be added.\\
- 
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
+ The above graphs shows how the numebr of species in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shown in the graph, the increse in the number of species is slightly more random than for the number of models. The only pattern is that a large increase in one year precedes a smaller increase in the next year.
+ The small increase in the number of species in the curated branch in 2012 is expected, for the same reasons as for the number of models added in 2012.
  \end{multicols}
  }
  
- \headerbox{R}{name=r,column=0,span=2,below=sbml}{
- R is a computer package that is widely used for statistical software
-development and data analysis. The system
-provides a wide variety of statistical and graphical techniques.
- 
- R is highly extensible through the use of user-submitted libraries for
-specific functions or specific areas of study. An example of this is the package rsbml, which was used in order to read models into R and extract information from the models.
- 
- A particular strength of R is its graphical facilities, which produce quality graphs that can include
-mathematical symbols.
+ \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
+ Systems Biology Markup Language (SBML) is an eXtensible Markup Language (XML) encoding of the reaction list, together with additional information required for quantitative modelling and simulation.
+  
+  SBML is used to represent biochemical networks in a way that is convinient for a computer to generate and parse. This allows the models to be communicated between disparate modelling and simulation tools.
+  
+  Whilst SBML is a good format to parse and generate, it is very difficult for humans to read and write. In order to extract infomation from the models during the project, the SBML files were first read into R and transformed into objects that could be worked with in R.
  }
  
- \headerbox{Terms}{name=terms,column=0,span=2,below=r}{
- Each model consists of lists of one or more of these components; 
-  \begin{itemize}
-  \item Species: A species is a type of entity that can participate reactions. These can range from chemicals such as ions or molecules to binding sites on proteins.
-  \item Reaction: A statement describing a process that changes the amount of one or more species. For example, this could be a process by which certain entities (reactants) are transformed into certain other entities (products). Each reaction has an associated kinetic law describing how quickly the reaction takes place.
-  \item Parameter: The term used to refer to named quantities, which could be constannts or variables. Parameters may be defined in a list outside of any reaction or in a particular reaction. In this project, parameters defined of any reaction are defined as 'Global' since these parameters may occur in multiple kinetic laws in the model. Parameters defined in a reaction are defined as 'Local' since these parameters will usually only occur in a model in the reaction where thery are defined.
-  \end{itemize}
+ \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
+ \begin{multicols}{2}
+ Consider we have a chemical called X. Let there be a model which describes how the amount of X varies with time where the rate of change of the amount of X is decribed by the following equation:\\
+ 
+ $\frac{dX}{dt} = \mu X(t) + \alpha$
+ 
+ \end{multicols}
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
@@ -136,11 +133,15 @@ mathematical symbols.
  }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
- \begin{tabular}{l r}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png} & \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png}\\
- \end{tabular}
- }
+ \begin{multicols}{2}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png}
+  The graph above shows the number of global parameters in each biomodel. The majority of models have less than 20 global parameters, with nearly 100 having less than 10 global parameters. This suggests that the models tend to have a low number of global parameters.
+
  
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png} 
+ The graph above shows the number of local parameters in each biomodel. The vast majority of models have 10 or less local parameters, due to a large proportion 0f models having zero local parameters, since those models are define all their parameters as global parameters. This suggests that the models tend to have a low number of local parameters.
+ \end{multicols}
+ }
  
 \end{poster}
 
