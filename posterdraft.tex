@@ -48,7 +48,9 @@
   }
   
  \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
- Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database is composed of two branches, of these is the curated branch, which is the focus of this project. There are currently 421 models in the curated branch. These models have been described in peer reviewed sceintific literature.
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The datbase was created in 2005. The focus of the project is the curated branch of the database.
+ 
+ There are currently 421 models in the curated branch. These models have been described in peer reviewed sceintific literature.
  
  One of the languages used by modellers submitting to the biomodels datbase is SBML. The models can also be downloaded from the database in SBML format.
  
@@ -124,20 +126,18 @@ mathematical symbols.
  \begin{multicols}{2}
  Consider we have a chemical called X. Let there be a model which describes how the amount of X varies with time where the rate of change of the amount of X is decribed by the following equation:\\
  
- $\frac{dX(t)}{dt} = \mu X(t) + \alpha$
+ $\frac{dX(t)}{dt} = \mu X(t) + \alpha$\\
  
- Where the amount of X is altered by the following processes:
+ Where the amount of X is altered by the following processes:\\
  
- \includegraphics[scale=0.5]{Poster-images/TermDiagram.png}
+ \includegraphics[scale=0.6]{Poster-images/TermDiagram.png}
  
  \begin{itemize}
  \item The entities X, Y and Z are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
- 
- \vspace{1cm}
- 
+  
  \item Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
  
- \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers which desrcibe the rate laws of reactions, this also describes how a species varies over time. Parameters can be constant or variable.
+ \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time. Parameters can vary with time.
  
  \end{itemize}
  \end{multicols}
@@ -156,21 +156,22 @@ mathematical symbols.
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
- SBO is an acronym for Systems Biology Ontology. Its main use is in the field of systems biology. Whilst not used in similating models, SBO terms help to provide additional information to the modeller. An example of this is showing the modeller about the role participants have in certtain reactions. 
+ SBO is an acronym for Systems Biology Ontology. Its main use is in the field of systems biology. SBO terms help to provide additional information to the modeller, such as showing the role participants have in certain reactions. 
 
-In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, this was found to not be possible since the SBO terms used for species were not unique to a certain species. An example of this is shown in the table below.
+In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. The table below shows the frequency of the SBO terms for the species in the first model:
 
   \begin{flushleft}
     {\footnotesize{
     \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.2cm} | }
     \hline
     sboTerm & Model ID & Frequency \\ \hline
-    SBO:0000290 & $\text{\textnormal{EPSP\_Edelstein}}$ & 1 \\ \hline
     SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
     SBO:0000420 & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
     \hline
     \end{tabular}}}
   \end{flushleft}
+  
+  As shown above, since there are multiple species with the same SBO terms, it is not posssible to use the SBO terms to find in which model a particular species is present.
 }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
