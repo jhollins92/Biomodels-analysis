@@ -100,11 +100,15 @@ mathematical symbols.
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- Systems Biology Markup Language (SBML) is an eXtensible Markup Language (XML) encoding of the reaction list, together with additional information required for quantitative modelling and simulation.
-  
-  SBML is used to represent biochemical networks in a way that is convinient for a computer to generate and parse. This allows the models to be communicated between disparate modelling and simulation tools.
-  
-  Whilst SBML is a good format to parse and generate, it is very difficult for humans to read and write. In order to extract infomation from the models during the project, the SBML files were first read into R and transformed into objects that could be worked with in R.
+ Systems Biology Markup Language (SBML) is a modelling standard. It is used for exchanging models between different sftwarte tools. An example of some SBML code is shown below:
+ 
+ $<species id="BLL" initialAmount="0" name="BasalACh2" metaid="\_000003" sboTerm="SBO:0000297" compartment="comp1">$
+ 
+ This line of code describes a species called BasalACh2 and assigns it an id (BLL) and an intital amount (in this case 0).
+ 
+ SBML represents models as a list of chemical transformations, since every process in a biological cell can be broken down into one or more chemical transformations.
+ 
+ Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. In order to extract information from the models, the SBML fiels for the models were first read into R and transformed into objects that can be worked with in R.
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
@@ -143,6 +147,10 @@ mathematical symbols.
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
+ SBO is an acronym for Systems Biology Ontology. Its main use is in the field of systems biology. Whilst not used in similating models, SBO terms help to provide additional information to the modeller. An example of this is showing the modeller about the role participants have in certtain reactions. 
+ 
+ In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, this was found to not be possible since the SBO terms used for species were not unique to a certain species. An example of this is shown in the table below.
+ 
  
  }
  
