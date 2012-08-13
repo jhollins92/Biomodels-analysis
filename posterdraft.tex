@@ -100,11 +100,20 @@ mathematical symbols.
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- Systems Biology Markup Language (SBML) is a modelling standard. It is used for exchanging models between different sftwarte tools. An example of some SBML code is shown below:
+ Systems Biology Markup Language (SBML) is a modelling standard. It is used for exchanging models between different software tools. An example of some SBML code is shown below:
  
- $<species id="BLL" initialAmount="0" name="BasalACh2" metaid="\_000003" sboTerm="SBO:0000297" compartment="comp1">$
+ \begin{flushleft}
+ {\scriptsize{
+ <listOfSpecies>
  
- This line of code describes a species called BasalACh2 and assigns it an id (BLL) and an intital amount (in this case 0).
+ <species metaid$="\_230475"$ id$=$"C" name$=$"Cyclin" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000252"$/>
+ 
+ <species metaid$="\_230495"$ id$=$"M" name$=$"CDC-2 Kinase" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000252"$/>
+ 
+ <species metaid$="\_230515"$ id$=$"X" name$=$"Cyclin Protease" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000297"$/>
+ 
+ </listOfSpecies>}}
+ \end{flushleft}
  
  SBML represents models as a list of chemical transformations, since every process in a biological cell can be broken down into one or more chemical transformations.
  
@@ -122,11 +131,11 @@ mathematical symbols.
  \includegraphics[scale=0.5]{Poster-images/TermDiagram.png}
  
  \begin{itemize}
- \item The entities X, Y and Z are species. Normally, species are chemicals such as ions or molecules but can also be biological entities such as protein binding sites.
+ \item The entities X, Y and Z are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
  
  \vspace{1cm}
  
- \item The processes which alter the amount of X are called reactions. Reactions are the processes by which the amounts of the species in a model changes. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
+ \item Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
  
  \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers which desrcibe the rate laws of reactions, this also describes how a species varies over time. Parameters can be constant or variable.
  
@@ -139,26 +148,29 @@ mathematical symbols.
  
  Consider the following set of reactions:
  
- \includegraphics[scale=0.5]{Poster-images/connectiondrawing.png}
+ \includegraphics[scale=0.4]{Poster-images/connectiondrawing.png}
  
- Since A appears twice as a reactant, it has 2 connections. Since B appears as a product oncce and a reactnat once, it has two connections in total (one reactant and one product). D appears as product once and so only has one connection.\\
+ Since the species A, B and C each appear in 2 reactions in the set, they each have 2 connections in this set. The species D and E appear in just 1 reaction and so have just 1 connection in this set.
  
  The average number of connections per species in the database is 5.334 (to 3 decimal places). 
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
  SBO is an acronym for Systems Biology Ontology. Its main use is in the field of systems biology. Whilst not used in similating models, SBO terms help to provide additional information to the modeller. An example of this is showing the modeller about the role participants have in certtain reactions. 
- 
- In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, this was found to not be possible since the SBO terms used for species were not unique to a certain species. An example of this is shown in the table below.
- 
-\begin{table}[t]
-\centering
-\begin{tabular}{}
-%table content
-\end{tabular}
-\caption{}
-\label{tab:label}
-\end{table} 
+
+In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, this was found to not be possible since the SBO terms used for species were not unique to a certain species. An example of this is shown in the table below.
+
+  \begin{flushleft}
+    {\footnotesize{
+    \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.2cm} | }
+    \hline
+    sboTerm & Model ID & Frequency \\ \hline
+    SBO:0000290 & $\text{\textnormal{EPSP\_Edelstein}}$ & 1 \\ \hline
+    SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
+    SBO:0000420 & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
+    \hline
+    \end{tabular}}}
+  \end{flushleft}
 }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
