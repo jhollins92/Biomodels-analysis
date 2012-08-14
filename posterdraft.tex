@@ -58,15 +58,9 @@
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
-  R is a computer package that is widely used for statistical software
-development and data analysis. The system
-provides a wide variety of statistical and graphical techniques.
- 
- R is highly extensible through the use of user-submitted libraries for
-specific functions or specific areas of study. An example of this is the package rsbml, which was used in order to read models into R and extract information from the models.
- 
- A particular strength of R is its graphical facilities, which produce quality graphs that can include
-mathematical symbols.
+  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques. One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. 
+  
+  R is highly extensible via the installation of packages. An example is the package rsbml used to extract information from the models, by first reading the models SBML files into R and converting these to objects that can be worked with in R.
   }
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
@@ -138,7 +132,7 @@ mathematical symbols.
  
  Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
  
- Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. In order to extract information from the models, the SBML files for the models were first read into R and transformed into objects that can be worked with in R.
+ Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. R was used for extracting information from the models, using the packgae rsbml, since it is easier to work with R than with SBML.
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
