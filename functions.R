@@ -7,7 +7,7 @@ DownloadSBMLFiles = function(){
   dest_tar = paste(dest, "tar", sep=".")
   dest_tar_bz2 = paste(dest_tar, "bz2", sep=".")
   base_url = "ftp://ftp.ebi.ac.uk/pub/databases/biomodels/weekly_archives/2012/"
-  arc = "BioModels-Database-weekly-2012-07-16-sbmls"
+  arc = "BioModels-Database-weekly-2012-08-13-sbmls"
   arc_tar_bz2 = paste(arc, ".tar.bz2", sep="")
   download = TRUE
   if(download == "TRUE"){
