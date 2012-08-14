@@ -90,7 +90,15 @@ mathematical symbols.
  
  
  \headerbox{References}{name=sboterms,column=0,above=bottom}{
- 
+ \footnotesize
+  \begin{enumerate}
+  
+   \item Wolkenhauer, Wellstead, Cho "Essays in Biochemistry volume 45 2008" Portland Press.
+   \item Wilkinson "Stochastic Modelling for Systems Biology" 2010.
+   \item BioModels databse website "http://www.ebi.ac.uk"
+   \item R project website "http://www.r-project.org"
+   
+  \end{enumerate}
  }
  
  \headerbox{Conlcusion}{name=conclusion,column=1,above=bottom}{
@@ -125,7 +133,7 @@ mathematical symbols.
  
  <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
  
- <\color{red}/listOfSpecies color{blue}>}}
+ <\color{red}/listOfSpecies \color{blue}>}}
  \end{flushleft}
  
  Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
@@ -146,7 +154,7 @@ mathematical symbols.
  \begin{itemize}
  \item The entities X and Y are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
   
- \item The process altering the amount of X are reactions. Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
+ \item The process altering the amount of X are reactions. Reactions are any processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reactants) transformed to another(products).
  
  \item $k_1$ and $k_2$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time.
  
@@ -167,7 +175,7 @@ mathematical symbols.
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
- SBO (Systems Biology Ontology) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
+ Systems Biology Ontology (SBO) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
 
 In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. The table below shows the frequency of the SBO terms for the species in the first model:
 
