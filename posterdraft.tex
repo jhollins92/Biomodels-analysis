@@ -10,6 +10,7 @@
 \usepackage{rotating}
 \usepackage{bm}
 \usepackage{url}
+\usepackage{color}
 
 \usepackage{graphicx}
 \usepackage{multicol}
@@ -48,9 +49,9 @@
   }
   
  \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
- Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The datbase was created in 2005. The focus of the project is the curated branch of the database.
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The datbase was created in 2005. 
  
- There are currently 421 models in the curated branch. These models have been described in peer reviewed sceintific literature.
+ The focus of the project is the curated branch of the database. There are currently 421 models in this branch. These models have been described in peer reviewed sceintific literature.
  
  One of the programming languages used by modellers submitting to the biomodels datbase is SBML. The models can also be downloaded from the database in SBML format.
  
@@ -72,17 +73,18 @@ mathematical symbols.
  \begin{multicols}{2}
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesHistogram.png}
  
- The top left grpah is the histogram of the number of species in each biomodel. The majority of models have less than 20 species, suggesting that the models tend to have small numbers of species.
+ The grpah above is the histogram of the number of species in each biomodel. The majority of models have less than 20 species, suggesting that the models tend to have small numbers of species.\\
  
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesOverReactions.png}
  
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png} 
   
-  The histogram of reactions, the top right graph, displays a similar pattern, which suggests that the models tend to have low numbers of reactions.
-  
-  \vspace{1.0cm}
+  The grpah above is the histogram of the number of reactions in each biomodel. The graph has a similar pattern to the species histogram, suggesting that the models tend to have low numbers of reactions.\\
+   
+ The graph to the left is a histogram of the ratio of species to reactions in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2.
  
- The graph to the left is a histogram of the ratio of species to reactants in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggest that the ratio of species to reactions is not particularly high for most models.
+ This suggests that in the majority of models, the species tend to appear in multiple reactions. This is because if every species in a model appeared in exactly one reaction, the ratio of species to reactions would be at least 2 as each reaction has at least one reactant and one product.
+ 
  \end{multicols}
  }
  
@@ -98,35 +100,32 @@ mathematical symbols.
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
  \begin{multicols}{2}
  \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
- The graph above shows how the number of biomodels in the curated branch has varied over time.
- 
- The increase in the number of models appears to be close to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time.
- 
+ The graph above shows the number of biomodels in the curated branch against time. The increase in the number of models appears to be close to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time.
+
  The latest archive used in the project was the August 2012 archive, hence the small increase in 2012 is expected.
  
  \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
- The graph above shows how the number of species in the curated branch has varied over time. 
- 
- There is no clear pattern to how the number of species increases over time, except that a large increase in one year precedes a smaller increase in the next year.
+ The graph above shows the number of species in the curated branch against time. There is no clear pattern to how the number of species increases over time, except that a large increase in one year precedes a smaller increase in the next year.
  
  Since there has been a smaller increase in the total number of models in 2012, the small increase in the total number of species in 2012 is expected.
  \end{multicols}
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- Systems Biology Markup Language (SBML) is a modelling standard used for exchanging models between different software tools. An example of some SBML code is shown below:
+ Systems Biology Markup Language (SBML) is a modelling standard used for exchanging models between different software tools. An example of some SBML code is shown below. This code definines the species for one of the biomodels:
  
  \begin{flushleft}
  {\scriptsize{
- <listOfSpecies>
+  \color{blue}
+ <\color{red}listOfSpecies\color{blue}>
  
- <species metaid$="\_230475"$ id$=$"C" name$=$"Cyclin" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000252"$/>
+ <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230475$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}C\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}Cyclin\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
  
- <species metaid$="\_230495"$ id$=$"M" name$=$"CDC-2 Kinase" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000252"$/>
+ <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230495$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}M\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}CDC-2 Kinase\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
  
- <species metaid$="\_230515"$ id$=$"X" name$=$"Cyclin Protease" compartment$=$"cell" initialConcentration$="0.01"$ substanceUnits$=$"substance" sboTerm$="$SBO:$0000297"$/>
+ <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
  
- </listOfSpecies>}}
+ <\color{red}/listOfSpecies color{blue}>}}
  \end{flushleft}
  
  Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
@@ -136,9 +135,9 @@ mathematical symbols.
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
  \begin{multicols}{2}
- Consider we have a chemical called X. Let there be a model which describes how the amount of X varies with time where the rate of change of the amount of X is decribed by the following equation:\\
+ Consider we have a chemical called X. Let there be a model which describes how the amount of X varies with time. Finally, let the rate of change of the amount of X be described by the following equation:\\
  
- $\frac{dX(t)}{dt} = \mu X(t) + \alpha$\\
+ $\frac{dX(t)}{dt} = k_1 X(t) + k_2$\\
  
  Where the amount of X is altered by the following processes:\\
  
@@ -149,7 +148,7 @@ mathematical symbols.
   
  \item The process altering the amount of X are reactions. Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
  
- \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time.
+ \item $k_1$ and $k_2$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time.
  
  \end{itemize}
  \end{multicols}
@@ -183,7 +182,7 @@ In the project, the possibility of using SBO terms to track which models certain
     \end{tabular}}}
   \end{flushleft}
   
-  As shown above, since there are multiple species with the same SBO terms, it is not posssible to use the SBO terms to find in which model a particular species is present.
+  As shown above, since there are multiple species with the same SBO term, it is not posssible to use the SBO terms to find in which model a particular species is present.
 }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
