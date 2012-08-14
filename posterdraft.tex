@@ -74,9 +74,11 @@ mathematical symbols.
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesOverReactions.png}
  
  \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png} 
- The top left grpah is the histogram of the number of species in each biomodel. The majority of models have less than 20 species.
-  This suggests that the majority of models have a small number of species. The histogram of reactions, the top right graph, displays a similar pattern, suggesting that the majority of models have a small number of species.
-  The graph to the left is a histogram of the ratio of species to reactants in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggest that the ratio of species to reactions is not particularly high for most models.
+ The top left grpah is the histogram of the number of species in each biomodel. The majority of models have less than 20 species. The histogram of reactions, the top right graph, displays a similar pattern.
+ 
+ This suggests that the models tend to have small numbers of species and reactions.
+ 
+ The graph to the left is a histogram of the ratio of species to reactants in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2. This suggest that the ratio of species to reactions is not particularly high for most models.
  \end{multicols}
  }
  
@@ -92,17 +94,17 @@ mathematical symbols.
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
  \begin{multicols}{2}
  \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
- The above graphs shows how the number of biomodels in the curated branch of the database has varied over time, since  the first models were submitted. The increase in the number of models appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time.
- The small increase in the number of models in the curated branch in 2012 is expected since the archive used in the project was the July 2012 archive.
+ The above graphs shows how the number of biomodels in the curated branch of the database has varied over time. The increase in the number of models appears to be closer to expoential, suggesting that the rate at which models are added to the databse per year is increasing over time.
+ The latest archive used in the project was the August 2012 archive, hence the small increase in 2012 is expected.
  
  \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
- The above graphs shows how the numebr of species in the curated branch of the database has varied over time, since  the first models were submitted in 2005. As shown in the graph, the increse in the number of species is slightly more random than for the number of models. The only pattern is that a large increase in one year precedes a smaller increase in the next year.
- The small increase in the number of species in the curated branch in 2012 is expected, for the same reasons as for the number of models added in 2012.
+ The above graphs shows how the numebr of species in the curated branch of the database has varied over time. As shown in the graph, the increse in the number of species is slightly more random than for the number of models. The only pattern is that a large increase in one year precedes a smaller increase in the next year.
+ Since there has been a smaller increase in the total number of models in 2012, the small increase in the total number of species in 2012 is expected.
  \end{multicols}
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- Systems Biology Markup Language (SBML) is a modelling standard. It is used for exchanging models between different software tools. An example of some SBML code is shown below:
+ Systems Biology Markup Language (SBML) is a modelling standard used for exchanging models between different software tools. An example of some SBML code is shown below:
  
  \begin{flushleft}
  {\scriptsize{
@@ -117,9 +119,9 @@ mathematical symbols.
  </listOfSpecies>}}
  \end{flushleft}
  
- SBML represents models as a list of chemical transformations, since every process in a biological cell can be broken down into one or more chemical transformations.
+ Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
  
- Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. In order to extract information from the models, the SBML fiels for the models were first read into R and transformed into objects that can be worked with in R.
+ Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. In order to extract information from the models, the SBML files for the models were first read into R and transformed into objects that can be worked with in R.
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
@@ -135,9 +137,9 @@ mathematical symbols.
  \begin{itemize}
  \item The entities X, Y and Z are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
   
- \item Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
+ \item The process altering the amount of X are reactions. Reactions are the processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reractants) being transfromed to another set of chemcials (products).
  
- \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time. Parameters can vary with time.
+ \item $\mu$ and $\alpha$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time.
  
  \end{itemize}
  \end{multicols}
