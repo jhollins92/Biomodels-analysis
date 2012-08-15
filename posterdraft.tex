@@ -41,7 +41,7 @@
   background=plain,
   linewidth=2pt
   }
-  {\includegraphics[width=18em]{Poster-images/ncl.jpg}}
+  {\includegraphics[width=18em]{Poster-images/7971.jpg}}
   % Title
   {\bf\textsc{Analysis of the BioModels Database}\vspace{0.5em}}
   % Authors
@@ -54,9 +54,15 @@
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
-  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques. 
+  \begin{multicols}{2}{
+  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques.\\
   
+  {\flushleft{\includegraphics[scale=0.15]{Poster-images/Rlogo.pdf}}}
+  }
+  \end{multicols}
+  \vspace{-1.0em}
   R is extensible by installing packages. An example is the package rsbml used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
+  
   }
   
   \headerbox{Models and Species over Time}{name=modelsnspecs,column=2,span=2}{
