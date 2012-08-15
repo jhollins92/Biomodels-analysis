@@ -64,12 +64,12 @@
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.png}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.png}}}
  
  As shown in the graph above, the majority of models have 10 or less species, suggesting that the models tend to have small numbers of species. \\
  
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesOverReactions.png}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/ReactionsHistogram.png} 
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesOverReactions.png}}}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/ReactionsHistogram.png}}}
  
   As shown above, the sepceis and reactions histograms have similar patterns, suggesting that the models tend to also have low numbers of reactions. \\
    
@@ -109,13 +109,13 @@
  
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeModelsPlot.png}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeModelsPlot.png}}}
  
  As shown in the graph above, The increase in the number of models in the curated branch appears to be close to linear, suggesting that models are being added at a reasonably constant rate.
 
  The latest archive used in the project was the August 2012 archive, hence the small increase in 2012 is expected.
  
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeSpeciesPlot.png}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeSpeciesPlot.png}}}
  
  As shown above, there appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
  
@@ -181,10 +181,10 @@
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
  Systems Biology Ontology (SBO) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
 
-In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. The table below shows the frequency of the SBO terms for the species in the first model:
+In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, a problem was found, demostrated in the table below: 
 
   {\flushleft{\footnotesize{
-    \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.2cm} | }
+    \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.1cm} | }
     \hline
     sboTerm & Model ID & Frequency \\ \hline
     SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
@@ -192,19 +192,20 @@ In the project, the possibility of using SBO terms to track which models certain
     \hline
     \end{tabular}}}}
   
-  As shown above, there are multiple species with the same SBO term. Similar problems were found in each model. Hence, it is not possible to use SBO terms to track where species appear.
+  \vspace{1.0em}
+  Similar problems were found in each model. Thus since SBO terms are not strictly unique to any individual species, it is not possible to use SBO terms to track where species appear.
 }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 4.5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.png}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.png}}}
   
   As shown in the graph above, the majority of models have 20 or less global parameters, with over 100 having less than 10 global parameters. This suggests that the models tend to have a low number of global parameters.
 
  
- \includegraphics[trim= 1.5mm 5mm 4.5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.png}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.png}}}
  
- As shown in the graph above, the majority of models have 10 or less local parameters, due to a large proportion 0f models defining all their parameters as global parameters. This suggests that the models tend to have a low number of local parameters.
+ As shown in the graph above, the majority of models have 10 or less local parameters. This suggests that the models tend to have a low number of local parameters. A likely cause is that a large number of models define all parameters as global.
  \end{multicols}
  }
  
