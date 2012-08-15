@@ -42,7 +42,7 @@
   linewidth=2pt
   }
   {\includegraphics[width=14em]{Poster-images/ncl.jpg}}
-  {\bf\textsc{Analysis of the Biomodels Database}\vspace{0.5em}
+  {\bf\huge{Analysis of the Biomodels Database}\vspace{0.5em}
     \newline\newline}
   % Authors
 {\vspace{-0.5em}\hspace{-10em}Sebastian Mellor* \& Colin Gillespie}
@@ -82,17 +82,27 @@
  }
  
  
- \headerbox{References}{name=sboterms,column=0,above=bottom}{
- \footnotesize
-  \begin{enumerate}
-  
-   \item Wolkenhauer, Wellstead, Cho "Essays in Biochemistry volume 45 2008" Portland Press.
-   \item Wilkinson "Stochastic Modelling for Systems Biology" 2010.
-   \item BioModels databse website "http://www.ebi.ac.uk"
-   \item R project website "http://www.r-project.org"
-   
-  \end{enumerate}
- }
+ \headerbox{References}{name=sboterms,column=0,above=bottom}{  
+  \smaller
+  \vspace{-0.4em}
+  \bibliographystyle{ieee}
+  \renewcommand{\section}[2]{\vskip 0.05em}
+  \begin{thebibliography}{1}\itemsep=-0.01em
+    \setlength{\baselineskip}{0.4em}
+    \bibitem{biochem}
+      Wolkenhauer,~O., Wellstead,~P., Cho,~K.H.
+      \newblock Essays in Biochemistry volume 45 Systems Biology
+    \bibitem{systemsbiology}
+      Wilkinson,~D.
+      \newblock Stochastic Modelling for Systems Biology
+    \bibitem{biomodels}
+      BioModels Database
+      \newblock $~~$ ({\em http:$//$www.ebi.ac.uk$/$biomodels$-$main$/$})
+    \bibitem{rproject}
+      R Project
+      \newblock SIMD Diagram $~~$ ({\em http:$//$www.r$-$project.org$/$}) 
+    \end{thebibliography}
+  }
  
  \headerbox{Conlcusion}{name=conclusion,column=1,above=bottom}{
  
@@ -156,7 +166,7 @@
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction.\\
+ In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction. \\
  
  Consider the following set of reactions:
  
@@ -171,7 +181,6 @@
  Systems Biology Ontology (SBO) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
 
 In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. The table below shows the frequency of the SBO terms for the species in the first model:
-
   \begin{flushleft}
     {\footnotesize{
     \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.2cm} | }
@@ -182,7 +191,6 @@ In the project, the possibility of using SBO terms to track which models certain
     \hline
     \end{tabular}}}
   \end{flushleft}
-  
   As shown above, there are multiple species with the same SBO term. Similar problems were found in each model. Hence, it is not possible to use SBO terms to track where species appear.
 }
  
