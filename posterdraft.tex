@@ -48,18 +48,18 @@
   {\textsc{\{ James Hollins * \& Colin Gillespie \}}}
   
  \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
- Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The datbase was created in 2005. 
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database was created in 2005. 
  
- The focus of the project is the curated branch of the database. There are currently 424 models in this branch. These models have been described in peer reviewed sceintific literature.
+ The focus of the project is the curated branch of the database, which currently contains 424 models. These models have all been described in peer reviewed scientific literature.
  
- One of the programming languages used by modellers submitting to the biomodels datbase is SBML. The models can also be downloaded from the database in SBML format.
+ One of the languages used for submitting models to the databse and downloading models from the databse is Sytems Biology Markup Language (SBML).
  
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
   R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques. One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. 
   
-  R is highly extensible via the installation of packages. An example is the package rsbml used to extract information from the models, by first reading the models SBML files into R and converting these to objects that can be worked with in R.
+  R is highly extensible via the installation of packages. An example is the package rsbml used to extract information from the model SBML files downloaded from the database.
   }
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
@@ -123,7 +123,7 @@
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- Systems Biology Markup Language (SBML) is a modelling standard used for exchanging models between different software tools. An example of some SBML code is shown below. This code definines the species for one of the biomodels:
+ SBML is a modelling standard used for exchanging models between different software tools. An example of SBML code is shown below. This code definines the species for one of the biomodels:
  
  \begin{flushleft}
  {\scriptsize{
@@ -141,7 +141,7 @@
  
  Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
  
- Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. R was used for extracting information from the models, using the packgae rsbml, since it is easier to work with R than with SBML.
+ Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. Since it is easier to work with R and interpret R output than SBML, R was used to extract the model information from the SBML files.
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
