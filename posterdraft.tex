@@ -50,16 +50,13 @@
  \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
  Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database was created in 2005. 
  
- The focus of the project is the curated branch of the database, which currently contains 424 models. These models have all been described in peer reviewed scientific literature.
- 
- One of the languages used for submitting models to the databse and downloading models from the databse is Sytems Biology Markup Language (SBML).
- 
+ The focus of the project is the curated branch of the database, which currently contains 424 models. These modles have all been described in peer reviewed scientific literature.
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
-  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques. One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. 
+  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques. 
   
-  R is highly extensible via the installation of packages. An example is the package rsbml used to extract information from the model SBML files downloaded from the database.
+  R is extensible by installing packages. An example is the package rsbml used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
   }
   
   \headerbox{Models and Species over Time}{name=modelsnspecs,column=2,span=2}{
@@ -111,7 +108,7 @@
  }
  
  \headerbox{SBML}{name=sbml,column=0,span=2,below=r}{
- SBML is a modelling standard used for exchanging models between different software tools. An example of SBML code is shown below. This code definines the species for one of the biomodels:
+ SBML is a modelling standard used for exchanging models between different software tools. An example of SBML code is shown below:
  
  \begin{flushleft}
  {\scriptsize{
@@ -127,48 +124,48 @@
  <\color{red}/listOfSpecies\color{blue}>}}
  \end{flushleft}
  
- Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
+ SBML represents the models as a list of chemical transformations, since every biological process in a cell can be described as a series of reactions
  
- Whilst SBML is easy for computers to generate and parse, it is difficult for humans to read and write. Since it is easier to work with R and interpret R output than SBML, R was used to extract the model information from the SBML files.
+ SBML is easy for computers to generate and parse but difficult for humans to read and write. Hence, R was used since R is easier to work with than SBML. 
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
  \begin{multicols}{2}
- Consider we have a chemical called X. Let there be a model which describes how the amount of X varies with time. Finally, let the rate of change of the amount of X be described by the following equation:\\
+ Consider we have a chemical called X. Let there be a model describing the rate of change of X by the following equation:\\
  
  $\frac{dX(t)}{dt} = -k_1 X(t) + k_2$\\
  
  Where the amount of X is altered by the following processes:\\
  
- \includegraphics[scale=0.4]{Poster-images/TermDiagram.png}
+ \includegraphics[scale=0.5]{Poster-images/TermDiagram.png}
  
  \begin{itemize}
  \item The entities X and Y are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
   
- \item The process altering the amount of X are reactions. Reactions are any processes by which the amounts of the species in a model change. The most common type involves a set of chemicals (reactants) transformed to another(products).
+ \item The process altering the amount of X are reactions. Reactions are any processes by which the amounts of the species in a model change.
  
- \item $k_1$ and $k_2$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions, these rate laws describe how a species varies over time.
+ \item $k_1$ and $k_2$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
  
  \end{itemize}
  \end{multicols}
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction.
+ In the project, a species has a 'connection' for each reaction in which the species is present.
  
  Consider the following set of reactions:
  
  \includegraphics[scale=0.4]{Poster-images/connectiondrawing.png}
  
- Since the species A, B and C each appear in 2 reactions in the set, they each have 2 connections in this set. The species D and E appear in just 1 reaction and so have just 1 connection in this set.
+ Since A, B and C each appear in 2 reactions, they each have 2 connections. D and E each appear in just 1 reaction and so have just 1 connection.
  
- The average number of connections per species in the database is 5.7226 (to 3 decimal places). 
+ The average number of connections per species in the database is 5.7226 (to 4 decimal places). 
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
- Systems Biology Ontology (SBO) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
+ Systems Biology Ontology (SBO) terms are used to provide additional information about model constituents.
 
-In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. However, a problem was found, demostrated in the table below: 
+ The possibility of using SBO terms to track which models certain species apperared in was explored. However, a problem was found, demostrated in the table below: 
 
   {\flushleft{\footnotesize{
     \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.1cm} | }
