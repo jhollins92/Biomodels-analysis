@@ -1,4 +1,4 @@
-\documentclass[portrait,a1paper,fontscale=0.5]{baposter}
+\documentclass[portrait,a1paper,fontscale=0.49]{baposter}
 
 \usepackage{calc}
 \usepackage{graphicx}
@@ -64,17 +64,16 @@
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesHistogram.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.png}
  
- The grpah above is the histogram of the number of species in each biomodel. The majority of models have 10 or less species, suggesting that the models tend to have small numbers of species.\\
+ As shown in the graph above, the majority of models have 10 or less species, suggesting that the models tend to have small numbers of species. \\
  
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/SpeciesOverReactions.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesOverReactions.png}
+ \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/ReactionsHistogram.png} 
  
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/ReactionsHistogram.png} 
-  
-  The grpah above is the histogram of the number of reactions in each biomodel. The graph has a similar pattern to the species histogram, suggesting that the models tend to have low numbers of reactions.\\
+  As shown above, the sepceis and reactions histograms have similar patterns, suggesting that the models tend to also have low numbers of reactions. \\
    
- The graph to the left is a histogram of the ratio of species to reactions in each biomodel. The most frequent range is range of values is 0.5-1.0 with the majority of models having ratios less than 2.
+ As shown in the graph on the left, the most frequent range of ratios of species to reactions is 0.5-1.0, with the majority of models having ratios less than 2.
  
  This suggests that in the majority of models, the species tend to appear in multiple reactions. This is because if every species in a model appeared in exactly one reaction, the ratio of species to reactions would be at least 2 as each reaction has at least one reactant and one product.
  
@@ -110,13 +109,15 @@
  
  \headerbox{More Pretty Pictures}{name=moreprettypics,column=2,span=2,above=bottom}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.png}
- The graph above shows the number of biomodels in the curated branch against time. The increase in the number of models appears to be close to linear, suggesting the rate at which models are being added to the curated branch is reasonbly constant.
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeModelsPlot.png}
+ 
+ As shown in the graph above, The increase in the number of models in the curated branch appears to be close to linear, suggesting that models are being added at a reasonably constant rate.
 
  The latest archive used in the project was the August 2012 archive, hence the small increase in 2012 is expected.
  
- \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.png}
- The graph above shows the number of species in the curated branch against time. There is no clear pattern to how the number of species increases over time, except that a large increase in one year precedes a smaller increase in the next year.
+ \includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeSpeciesPlot.png}
+ 
+ As shown above, there appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
  
  Since there has been a smaller increase in the total number of models in 2012, the small increase in the total number of species in 2012 is expected.
  \end{multicols}
@@ -136,7 +137,7 @@
  
  <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
  
- <\color{red}/listOfSpecies \color{blue}>}}
+ <\color{red}/listOfSpecies\color{blue}>}}
  \end{flushleft}
  
  Since every process in a biological cell can be broken down into one or more chemical transformations, SBML represents models as a list of these transformations. 
@@ -166,7 +167,7 @@
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction. \\
+ In this project, a species is defined as having a 'connection' in a particular reaction if the sepcies occurs in that reaction.
  
  Consider the following set of reactions:
  
@@ -181,27 +182,29 @@
  Systems Biology Ontology (SBO) terms are used to assgn meaning to model constituents, for example qualifying the type for each species in a model. 
 
 In the project, the possibility of using SBO terms to track which models certain species apperared in was explored. The table below shows the frequency of the SBO terms for the species in the first model:
-  \begin{flushleft}
-    {\footnotesize{
+
+  {\flushleft{\footnotesize{
     \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.2cm} | }
     \hline
     sboTerm & Model ID & Frequency \\ \hline
     SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
     SBO:0000420 & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
     \hline
-    \end{tabular}}}
-  \end{flushleft}
+    \end{tabular}}}}
+  
   As shown above, there are multiple species with the same SBO term. Similar problems were found in each model. Hence, it is not possible to use SBO terms to track where species appear.
 }
  
  \headerbox{Parameters}{name=paras,column=2,span=2,below=specsnreacts}{
  \begin{multicols}{2}
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/GlobalParametersHistogram.png}
-  The graph above shows the number of global parameters in each biomodel. The majority of models have 20 or less global parameters, with over 100 having less than 10 global parameters. This suggests that the models tend to have a low number of global parameters.
+ \includegraphics[trim= 1.5mm 5mm 4.5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.png}
+  
+  As shown in the graph above, the majority of models have 20 or less global parameters, with over 100 having less than 10 global parameters. This suggests that the models tend to have a low number of global parameters.
 
  
- \includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.4]{Poster-images/LocalParametersHistogram.png} 
- The graph above shows the number of local parameters in each biomodel. The majority of models have 10 or less local parameters, due to a large proportion 0f models defining all their parameters as global parameters. This suggests that the models tend to have a low number of local parameters.
+ \includegraphics[trim= 1.5mm 5mm 4.5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.png}
+ 
+ As shown in the graph above, the majority of models have 10 or less local parameters, due to a large proportion 0f models defining all their parameters as global parameters. This suggests that the models tend to have a low number of local parameters.
  \end{multicols}
  }
  
