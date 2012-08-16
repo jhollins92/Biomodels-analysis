@@ -1,4 +1,4 @@
-\documentclass[portrait,a1paper,fontscale=0.49]{baposter}
+\documentclass[portrait,a1paper,fontscale=0.47]{baposter}
 
 \usepackage{calc}
 \usepackage{graphicx}
@@ -14,6 +14,7 @@
 
 \usepackage{graphicx}
 \usepackage{multicol}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
 
 \begin{document}
 
@@ -184,8 +185,12 @@
 
  The possibility of using SBO terms to track which models certain species apperared in was explored. However, a problem was found, demostrated in the table below: 
 
-  {\flushleft{\footnotesize{
-    \begin{tabular}{ | p{1.7cm} | p{2.29cm} | p{1.1cm} | }
+  \vspace{-1.0em}
+  {\flushleft{
+  \footnotesize{
+    \captionof{table}{Species SBO terms in the first biomodel}
+      \label{tab:name}
+      \begin{tabular}{ | p{1.6cm} | p{2.1cm} | p{1.1cm} | }
     \hline
     sboTerm & Model ID & Frequency \\ \hline
     SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
