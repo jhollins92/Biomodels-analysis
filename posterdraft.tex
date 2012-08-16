@@ -57,7 +57,7 @@
  The database was created in 2005.
  \end{multicols}
  \vspace{-0.5em}
- The focus of the project is the curated branch of the database. Following the release on 11th August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
+ The focus of the project is the curated branch of the database. Following the release on 11$^{\text{th}}$ August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
@@ -70,7 +70,7 @@
   
   \end{multicols}
   \vspace{-0.5em}
-  R is extensible by installing packages. An example is the package rsbml used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
+  R is extensible by installing packages. An example is the package \texttt{rsbml} used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
   
   }
   
@@ -113,12 +113,12 @@
  \begin{multicols}{2}
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.png}}}
   
-  The majority of models have 20 or less global parameters. This suggests that the models tend to have a low number of global parameters.
+  The majority of models have twenty or fewer global parameters. This suggests that the models tend to have a low number of global parameters.
 
  
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.png}}}
  
- The majority of models have 10 or less local parameters. This suggests that the models tend to have a low number of local parameters.
+ The majority of models have fewer than ten local parameters. This suggests that the models tend to have a low number of local parameters.
  \end{multicols}
  }
  
@@ -130,57 +130,62 @@
  \end{multicols}
  
  \vspace{-2.0em}
- \begin{flushleft}
- {\scriptsize{
+
+\begin{flushleft}
+{\scriptsize{
+ %\resizebox{\textwidth}{!}{%
   \color{blue}
  <\color{red}listOfSpecies\color{blue}>
  
- <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230475$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}C\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}Cyclin\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
+  \quad<\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230475$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}C\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}Cyclin\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" 
+  
+  \qquad \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
  
- <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230495$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}M\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}CDC-2 Kinase\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
+ \quad <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230495$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}M\color{blue}" \color{red} name$\color{blue}=$\color{blue}"\color{black}CDC-2 Kinase\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" 
  
- <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
+ \qquad \quad\color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black}0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance\color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000252$\color{blue}"/>
+ 
+ \quad <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" 
+ 
+ \qquad \quad\color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
  
  \vspace{-0.5em}
  <\color{red}/listOfSpecies\color{blue}>}}
  \end{flushleft}
  
- SBML represents the models as a list of chemical transformations, since every biological process in a cell can be described as a series of reactions
- 
- SBML is easy for computers to generate and parse but difficult for humans to read and write. Hence, R was used since R is easier to work with than SBML. 
+\noindent SBML represents the models as a list of chemical transformations, since every biological process in a cell can be described as a series of reactions. SBML is easy for computers to generate and parse but difficult for humans to read and write. Hence, R was used since R is easier to work with than SBML. 
  }
  
  \headerbox{Terms}{name=terms,column=0,span=2,below=sbml}{
  \begin{multicols}{2}
- Consider we have a chemical called X. Let there be a model describing the rate of change of X by the following equation:\\
+ Suppose we have a chemical species, $X$. We model the rate of change of $X$ using the following ODE:
+ \begin{equation*}
+ \frac{dX(t)}{dt} = -k_1 X(t) + k_2 \;.
+ \end{equation*}
+ Where the amount of X is altered by the following processes:
+ \[
+ X \xrightarrow{k_1} \emptyset \quad\text{and}\quad \emptyset \xrightarrow{k_2} X \;.
+ \]
+ \bigskip
  
- $\frac{dX(t)}{dt} = -k_1 X(t) + k_2$\\
- 
- Where the amount of X is altered by the following processes:\\
- 
- \includegraphics[scale=0.5]{Poster-images/TermDiagram.png}
- 
- \begin{itemize}
- \item The entities X and Y are species. Species range from chemicals such as ions or molecules to biological entities such as protein binding sites.
-  
- \item The process altering the amount of X are reactions. Reactions are any processes by which the amounts of the species in a model change.
- 
- \item $k_1$ and $k_2$ are parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
- 
- \end{itemize}
+  \begin{itemize}
+ \item The entity $X$ is a chemical species, for example an ion or a biological entities such as protein binding sites.
+   \item The process altering the amount of $X$ are reactions. 
+  \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
+  \end{itemize}
  \end{multicols}
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In the project, a species has a 'connection' for each reaction in which the species is present.
+ In the project, a species has a 'connection' for each reaction in which the species is present. Consider the following set of reactions:
+ \begin{align*}
+ A &\rightarrow B \\
+ B &\rightarrow C + D \\
+ A + C &\rightarrow E
+ \end{align*}
+Since $A$, $B$ and $C$ each appear in two reactions, they each have 2 connections. D and E each appear in just 1 reaction and so have just 1 connection.
  
- Consider the following set of reactions:
- 
- \includegraphics[scale=0.4]{Poster-images/connectiondrawing.png}
- 
- Since A, B and C each appear in 2 reactions, they each have 2 connections. D and E each appear in just 1 reaction and so have just 1 connection.
- 
- The average number of connections per species in the database is 5.7226 (to 4 decimal places). 
+ The average number of connections per species in the database is 5.72 (to 2 decimal places). 
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
@@ -193,14 +198,13 @@
   \footnotesize{
     \captionof{table}{Species SBO terms from one model}
       \label{tab:name}
-      \begin{tabular}{ | p{1.5cm} | p{2.0cm} | p{1.05cm} | }
+            \begin{tabular}{  @{}p{1.5cm}  p{2.0cm}  p{1.05cm} @{} }
     \hline
-    sboTerm & Model ID & Frequency \\ \hline
-    SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
-    SBO:0000420 & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
+    sboTerm & Model ID & Freq. \\ \hline
+    \texttt{SBO:0000297} & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\
+    \texttt{SBO:0000420} & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
     \hline
     \end{tabular}}}}
-  
   \vspace{1.0em}
   Similar problems were found in each model. Therefore, it is not possible to use SBO terms to track where species appear.
 }
