@@ -54,7 +54,9 @@
   
  {\flushleft{\includegraphics[scale=0.7]{Poster-images/Biomodels_logo.png}}}
  }
- The database was created in 2005.
+ 
+ \vspace{-2.0em}
+ {\flushleft{The database was created in 2005.}}
  \end{multicols}
  \vspace{-0.5em}
  The focus of the project is the curated branch of the database. Following the release on 11$^{\text{th}}$ August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
@@ -64,13 +66,13 @@
   \begin{multicols}{2}{
   R is a language and environment for statistical computing and graphics, providing a wide variety of statistical 
 
-  {\flushleft{\includegraphics[trim= 0.9mm 0mm 0.9mm 1.7mm, clip,scale=0.1326]{Poster-images/Rlogo.pdf}}}
+  {\flushleft{\includegraphics[trim= 0.9mm 0mm 0.8mm 1.7mm, clip,scale=0.1326]{Poster-images/Rlogo.pdf}}}
   }
   and graphical techniques.
   
   \end{multicols}
   \vspace{-0.5em}
-  R is extensible by installing packages. An example is the package \texttt{rsbml} used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
+  R is extensible by installing packages. An example is the package \texttt{rsbml} used to parse and extract information from SBML files. However, only 356 of the 424 curated models could be parsed in R using this package.
   
   }
   
@@ -169,7 +171,7 @@
  \bigskip
  
   \begin{itemize}
- \item The entity $X$ is a chemical species, for example an ion or a biological entities such as protein binding sites.
+ \item The entity $X$ is a chemical species, for example an ion or a biological entity such as a protein binding site.
    \item The process altering the amount of $X$ are reactions. 
   \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
   \end{itemize}
@@ -177,15 +179,19 @@
  }
  
   \headerbox{Connections}{name=connections,column=0,below=terms}{
- In the project, a species has a 'connection' for each reaction in which the species is present. Consider the following set of reactions:
+ In the project, a species has a 'connection' for each reaction in which it is present. Consider the following reactions:
+ \vspace{-0.5em}
  \begin{align*}
  A &\rightarrow B \\
  B &\rightarrow C + D \\
  A + C &\rightarrow E
  \end{align*}
-Since $A$, $B$ and $C$ each appear in two reactions, they each have 2 connections. D and E each appear in just 1 reaction and so have just 1 connection.
+ $A$, $B$ and $C$ each appear in two reactionsa and so have 2 connections. $D$ and $E$ each appear in just 1 reaction and so have just 1 connection.
  
- The average number of connections per species in the database is 5.72 (to 2 decimal places). 
+ The average number of connections is 5.72 (to 2 decimal places). 
+ \begin{center}
+ \includegraphics[trim = 5mm 5mm 5mm 5mm,clip,scale=0.4]{Poster-images/complex.png}
+ \end{center}
  }
  
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
@@ -205,6 +211,7 @@ Since $A$, $B$ and $C$ each appear in two reactions, they each have 2 connection
     \texttt{SBO:0000420} & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
     \hline
     \end{tabular}}}}
+  
   \vspace{1.0em}
   Similar problems were found in each model. Therefore, it is not possible to use SBO terms to track where species appear.
 }
