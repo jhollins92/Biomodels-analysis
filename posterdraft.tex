@@ -1,4 +1,4 @@
-\documentclass[portrait,a1paper,fontscale=0.47]{baposter}
+\documentclass[portrait,a1paper,fontscale=0.46]{baposter}
 
 \usepackage{calc}
 \usepackage{graphicx}
@@ -52,22 +52,24 @@
  \begin{multicols}{2}{
  Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. 
   
- {\flushleft{\includegraphics[scale=0.75]{Poster-images/Biomodels_logo.png}}}
+ {\flushleft{\includegraphics[scale=0.7]{Poster-images/Biomodels_logo.png}}}
  }
  The database was created in 2005.
  \end{multicols}
  \vspace{-0.5em}
- The focus of the project is the curated branch of the database, which currently contains 424 models. These models have all been described in peer reviewed scientific literature.
+ The focus of the project is the curated branch of the database. Following the release on 11th August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
  }
   
   \headerbox{R}{name=r, column=1,row=0}{
   \begin{multicols}{2}{
-  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques.\\
-  
-  {\flushleft{\includegraphics[scale=0.15]{Poster-images/Rlogo.pdf}}}
+  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical 
+
+  {\flushleft{\includegraphics[trim= 0.9mm 0mm 0.9mm 1.7mm, clip,scale=0.1326]{Poster-images/Rlogo.pdf}}}
   }
+  and graphical techniques.
+  
   \end{multicols}
-  \vspace{-1.0em}
+  \vspace{-0.5em}
   R is extensible by installing packages. An example is the package rsbml used to parse and extract information from SBML files. However, only 357 of the 424 curated models could be parsed in R using this package.
   
   }
@@ -76,7 +78,7 @@
  \begin{multicols}{2}
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeModelsPlot.png}}}
  
- As shown in the graph above, The increase in the number of models in the curated branch appears to be close to linear, suggesting that models are being added at a reasonably constant rate.
+ The increase in the number of curated models appears to be almost linear, suggesting that models are being added at a reasonably constant rate.
  
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeSpeciesPlot.png}}}
  
@@ -103,7 +105,7 @@
       \newblock $~~$ ({\em http:$//$www.ebi.ac.uk$/$biomodels$-$main$/$})
     \bibitem{rproject}
       R Project
-      \newblock SIMD Diagram $~~$ ({\em http:$//$www.r$-$project.org$/$}) 
+      \newblock $~~$ ({\em http:$//$www.r$-$project.org$/$}) 
     \end{thebibliography}
   }
   
@@ -127,7 +129,7 @@
  \includegraphics[scale=0.6]{Poster-images/sbml.png}
  \end{multicols}
  
- \vspace{-2.5em}
+ \vspace{-2.0em}
  \begin{flushleft}
  {\scriptsize{
   \color{blue}
@@ -139,6 +141,7 @@
  
  <\color{red}species metaid$\color{blue}=$\color{blue}"$\color{black}\_230515$\color{blue}" \color{red} id$\color{blue}=$\color{blue}"\color{black}X\color{blue}" \color{red} name$ \color{blue}=$ \color{blue} "\color{black}Cyclin Protease\color{blue}" \color{red} compartment$\color{blue}=$\color{blue}"\color{black}cell\color{blue}" \color{red} initialConcentration$\color{blue}=$\color{blue}"$\color{black} 0.01$\color{blue}" \color{red} substanceUnits$\color{blue}=$\color{blue}"\color{black}substance \color{blue}" \color{red} sboTerm$\color{blue}=$\color{blue}"\color{black}SBO:$0000297$\color{blue}"/>
  
+ \vspace{-0.5em}
  <\color{red}/listOfSpecies\color{blue}>}}
  \end{flushleft}
  
@@ -183,14 +186,14 @@
  \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
  Systems Biology Ontology (SBO) terms are used to provide additional information about model constituents.
 
- The possibility of using SBO terms to track which models certain species apperared in was explored. However, a problem was found, demostrated in the table below: 
+ The possibility of using SBO terms to track which models certain species apperared in was explored. However, it was found that species do not necessarily have unique SBO terms 
 
   \vspace{-1.0em}
   {\flushleft{
   \footnotesize{
-    \captionof{table}{Species SBO terms in the first biomodel}
+    \captionof{table}{Species SBO terms from the first model}
       \label{tab:name}
-      \begin{tabular}{ | p{1.6cm} | p{2.1cm} | p{1.1cm} | }
+      \begin{tabular}{ | p{1.5cm} | p{2.0cm} | p{1.05cm} | }
     \hline
     sboTerm & Model ID & Frequency \\ \hline
     SBO:0000297 & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\ \hline
@@ -199,7 +202,7 @@
     \end{tabular}}}}
   
   \vspace{1.0em}
-  Similar problems were found in each model. Thus since SBO terms are not strictly unique to any individual species, it is not possible to use SBO terms to track where species appear.
+  Similar problems were found in each model. Therefore, it is not possible to use SBO terms to track where species appear.
 }
  
  \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2,below=modelsnspecs}{
