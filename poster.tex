@@ -110,76 +110,27 @@
 \noindent SBML represents the models as a list of chemical transformations, since every biological process in a cell can be described as a series of reactions. SBML is easy for computers to generate and parse but difficult for humans to read and write. Hence, R was used since R is easier to work with than SBML. 
  }
  
- \headerbox{Models and Species over Time}{name=modelsnspecs,column=4,span=2}{
+  \headerbox{Terms}{name=terms,column=4,span=2}{
  \begin{multicols}{2}
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeModelsPlot.pdf}}}
+ Suppose we have a chemical species, $X$. We model the rate of change of $X$ using the following ODE:
+ \begin{equation*}
+ \frac{dX(t)}{dt} = -k_1 X(t) + k_2 \;.
+ \end{equation*}
+ Where the amount of X is altered by the following processes:
+ \[
+ X \xrightarrow{k_1} \emptyset \quad\text{and}\quad \emptyset \xrightarrow{k_2} X \;.
+ \]
+ \bigskip
  
- The increase in the number of curated models appears to be almost linear, suggesting that models are being added at a reasonably constant rate.
- 
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.42]{Poster-images/CummulativeSpeciesPlot.pdf}}}
- 
- As shown above, there appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
-
+  \begin{itemize}
+ \item The entity $X$ is a chemical species, for example an ion or a biological entity such as a protein binding site.
+   \item The process altering the amount of $X$ are reactions. 
+  \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
+  \end{itemize}
  \end{multicols}
  }
  
- \headerbox{Connections}{name=connections,column=0,above=bottom}{
- In the project, a species has a 'connection' for each reaction in which it is present. Consider the following reactions:
- \vspace{-0.5em}
- \begin{align*}
- A &\rightarrow B \\
- B &\rightarrow C + D \\
- A + C &\rightarrow E
- \end{align*}
- $A$, $B$ and $C$ each appear in two reactionsa and so have 2 connections. $D$ and $E$ each appear in just 1 reaction and so have just 1 connection.
- 
- The average number of connections is 5.72 (to 2 decimal places). 
- \begin{center}
- \includegraphics[trim = 5mm 5mm 5mm 5mm,clip,scale=0.3]{Poster-images/complex.png}
- \end{center}
- }
- 
- \headerbox{SBO Terms}{name=sboterms,column=1,above=bottom}{
- Systems Biology Ontology (SBO) terms are used to provide additional information about model constituents.
-
- The possibility of using SBO terms to track which models certain species apperared in was explored. However, it was found that species do not necessarily have unique SBO terms 
-
-  \vspace{-1.0em}
-  {\flushleft{
-  \footnotesize{
-    \captionof{table}{Species SBO terms from one model}
-      \label{tab:name}
-            \begin{tabular}{  @{}p{1.5cm}  p{2.0cm}  p{1.05cm} @{} }
-    \hline
-    sboTerm & Model ID & Freq. \\ \hline
-    \texttt{SBO:0000297} & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\
-    \texttt{SBO:0000420} & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
-    \hline
-    \end{tabular}}}}
-  
-  \vspace{1.0em}
-  Similar problems were found in each model. Therefore, it is not possible to use SBO terms to track where species appear.
-}
- 
- \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2,above=bottom}{
- \begin{multicols}{2}
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.pdf}}}
- 
- As shown in the graph above, the majority of models have 10 or less species, suggesting that the models tend to have small numbers of species. \\
- 
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesOverReactions.pdf}}}
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/ReactionsHistogram.pdf}}}
- 
-  The species and reactions histograms have similar patterns, suggesting that the models tend to also have low numbers of reactions. \\
-   
- The most frequent range of values for the ratios of species to reactions is 0.5-1.0, with the majority of models having ratios less than 2.
- 
- This suggests that in the majority of models, the species tend to appear in multiple reactions, since if every species in a model appeared in just one reaction, the ratio would be at least 2.
- 
- \end{multicols}
- }
- 
- \headerbox{References}{name=sboterms,column=4, span=2,above=bottom}{  
+ \headerbox{References}{name=sboterms,column=0, span=2,above=bottom}{  
   \smaller
   \vspace{-0.4em}
   \bibliographystyle{ieee}
@@ -201,36 +152,85 @@
     \end{thebibliography}
   }
  
- \headerbox{Terms}{name=terms,column=0,span=2,below=r}{
+ \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2,above=bottom}{
  \begin{multicols}{2}
- Suppose we have a chemical species, $X$. We model the rate of change of $X$ using the following ODE:
- \begin{equation*}
- \frac{dX(t)}{dt} = -k_1 X(t) + k_2 \;.
- \end{equation*}
- Where the amount of X is altered by the following processes:
- \[
- X \xrightarrow{k_1} \emptyset \quad\text{and}\quad \emptyset \xrightarrow{k_2} X \;.
- \]
- \bigskip
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.pdf}}}
  
-  \begin{itemize}
- \item The entity $X$ is a chemical species, for example an ion or a biological entity such as a protein binding site.
-   \item The process altering the amount of $X$ are reactions. 
-  \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
-  \end{itemize}
+ As shown in the graph above, the majority of models have 10 or less species, suggesting that the models tend to have small numbers of species. \\
+ 
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesOverReactions.pdf}}}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/ReactionsHistogram.pdf}}}
+ 
+  The species and reactions histograms have similar patterns, suggesting that the models tend to also have low numbers of reactions. \\
+   
+ The most frequent range of values for the ratios of species to reactions is 0.5-1.0, with the majority of models having ratios less than 2.
+ 
+ This suggests that in the majority of models, the species tend to appear in multiple reactions, since if every species in a model appeared in just one reaction, the ratio would be at least 2.
+ 
  \end{multicols}
  }
  
- \headerbox{Parameters}{name=paras,column=4,span=2,below=modelsnspecs}{
+ \headerbox{Parameters}{name=paras,column=4,span=2,above=bottom}{
  \begin{multicols}{2}
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.pdf}}}
   
-  The majority of models have twenty or fewer global parameters. This suggests that the models tend to have a low number of global parameters.
+  The majority of models have twenty or fewer global parameters. This suggests the models tend to have a low number of global parameters.
 
  
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.pdf}}}
  
- The majority of models have fewer than ten local parameters. This suggests that the models tend to have a low number of local parameters.
+ The majority of models have fewer than ten local parameters. This suggests the models tend to have a low number of local parameters.
+ \end{multicols}
+ }
+ 
+ \headerbox{Connections}{name=connections,column=0,below=r}{
+ In the project, a species has a 'connection' for each reaction in which it is present. Consider the following reactions:
+ \vspace{-0.5em}
+ \begin{align*}
+ A &\rightarrow B \\
+ B &\rightarrow C + D \\
+ A + C &\rightarrow E
+ \end{align*}
+ $A$, $B$ and $C$ each appear in two reactionsa and so have 2 connections. $D$ and $E$ each appear in just 1 reaction and so have just 1 connection.
+ 
+ The average number of connections is 5.72 (to 2 decimal places). 
+ \begin{center}
+ \includegraphics[trim = 5mm 5mm 5mm 5mm,clip,scale=0.3]{Poster-images/complex.png}
+ \end{center}
+ }
+ 
+ \headerbox{SBO Terms}{name=sboterms,column=1,below=r}{
+ Systems Biology Ontology (SBO) terms are used to provide additional information about model constituents.
+
+ The possibility of using SBO terms to track which models certain species apperared in was explored. However, it was found that species do not necessarily have unique SBO terms 
+
+  \vspace{-1.0em}
+  {\flushleft{
+  \footnotesize{
+    \captionof{table}{Species SBO terms from one model}
+      \label{tab:name}
+            \begin{tabular}{  @{}p{1.5cm}  p{2.0cm}  p{1.05cm} @{} }
+    \hline
+    sboTerm & Model ID & Freq. \\ \hline
+    \texttt{SBO:0000297} & $\text{\textnormal{EPSP\_Edelstein}}$ & 8 \\
+    \texttt{SBO:0000420} & $\text{\textnormal{EPSP\_Edelstein}}$ & 4 \\
+    \hline
+    \end{tabular}}}}
+  
+  \vspace{1.0em}
+  Similar problems were found in each model. Therefore, it is not possible    to use SBO terms to track where species appear.
+ }
+  
+  \headerbox{Models and Species over Time}{name=modelsnspecs,column=4,span=2,below=terms}{
+ \begin{multicols}{2}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.pdf}}}
+ 
+ The increase in the number of curated models appears to be almost linear, suggesting that models are being added at a reasonably constant rate.
+ 
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.pdf}}}
+ 
+ There appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
+
  \end{multicols}
  }
  
