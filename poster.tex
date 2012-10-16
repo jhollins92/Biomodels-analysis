@@ -48,35 +48,31 @@
   % Authors
   {\textsc{\{ James Hollins * \& Colin Gillespie \}}}
   
- \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0}{
- \begin{multicols}{2}{
- Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. 
-  
- {\flushleft{\includegraphics[scale=0.7]{Poster-images/Biomodels_logo.png}}}
+ \headerbox{Biomodels Database}{name=biomodelsdatabase,column=0,row=0,span=2}{
+ \begin{multicols}{2}
+ Biomodels Database is an online resource for storing and serving quantative models of biomedical  interest. The database was created in 2005. The focus of the project is the curated branch of the database. 
+ \begin{center}
+ \includegraphics[scale=0.9]{Poster-images/Biomodels_logo.png}
+ \end{center}
+ \end{multicols}
+ \vspace{-1.0em}
+ Following the release on 11$^{\text{th}}$ August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
  }
  
- \vspace{-2.0em}
- {\flushleft{The database was created in 2005.}}
- \end{multicols}
- \vspace{-0.5em}
- The focus of the project is the curated branch of the database. Following the release on 11$^{\text{th}}$ August, there are 424 models in this branch, which have all been described in peer reviewed scientific literature.
- }
-  
-  \headerbox{R}{name=r, column=1,row=0}{
+ \headerbox{R}{name=r,column=2,row=0,span=2}{
   \begin{multicols}{2}{
-  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical 
+  R is a language and environment for statistical computing and graphics, providing a wide variety of statistical and graphical techniques.
 
-  {\flushleft{\includegraphics[trim= 0.9mm 0mm 0.8mm 1.7mm, clip,scale=0.1326]{Poster-images/Rlogo.pdf}}}
+  \begin{center}
+  \includegraphics[trim= 0.9mm 0mm 0.8mm 1.7mm, clip,scale=0.13]{Poster-images/Rlogo.pdf}
+  \end{center}
   }
-  and graphical techniques.
-  
   \end{multicols}
-  \vspace{-0.5em}
+  \vspace{-1.0em}
   R is extensible by installing packages. An example is the package \texttt{rsbml} used to parse and extract information from SBML files. However, only 356 of the 424 curated models could be parsed in R using this package.
-  
   }
   
-  \headerbox{SBML}{name=sbml,column=2,span=2}{
+  \headerbox{SBML}{name=sbml,column=4,row=0,span=2}{
  \begin{multicols}{2}
  SBML is a modelling standard used for exchanging models between different software tools. An example of SBML code is shown below:
  
@@ -110,26 +106,6 @@
 \noindent SBML represents the models as a list of chemical transformations, since every biological process in a cell can be described as a series of reactions. SBML is easy for computers to generate and parse but difficult for humans to read and write. Hence, R was used since R is easier to work with than SBML. 
  }
  
-  \headerbox{Terms}{name=terms,column=4,span=2}{
- \begin{multicols}{2}
- Suppose we have a chemical species, $X$. We model the rate of change of $X$ using the following ODE:
- \begin{equation*}
- \frac{dX(t)}{dt} = -k_1 X(t) + k_2 \;.
- \end{equation*}
- Where the amount of X is altered by the following processes:
- \[
- X \xrightarrow{k_1} \emptyset \quad\text{and}\quad \emptyset \xrightarrow{k_2} X \;.
- \]
- \bigskip
- 
-  \begin{itemize}
- \item The entity $X$ is a chemical species, for example an ion or a biological entity such as a protein binding site.
-   \item The process altering the amount of $X$ are reactions. 
-  \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
-  \end{itemize}
- \end{multicols}
- }
- 
  \headerbox{References}{name=sboterms,column=0, span=2,above=bottom}{  
   \smaller
   \vspace{-0.4em}
@@ -152,7 +128,20 @@
     \end{thebibliography}
   }
  
- \headerbox{Species and Reactions}{name=specsnreacts,column=2,row=0,span=2,above=bottom}{
+ \headerbox{Parameters}{name=paras,column=2,span=2,above=bottom}{
+ \begin{multicols}{2}
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.pdf}}}
+  
+  The majority of models have twenty or fewer global parameters. This suggests that the models tend to have a low number of global parameters.
+
+ 
+ {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.pdf}}}
+ 
+ The majority of models have fewer than ten local parameters. This suggests that the models tend to have a low number of local parameters.
+ \end{multicols}
+ }
+ 
+ \headerbox{Species and Reactions}{name=specsnreacts,column=4,row=0,span=2,above=bottom}{
  \begin{multicols}{2}
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/SpeciesHistogram.pdf}}}
  
@@ -170,20 +159,27 @@
  \end{multicols}
  }
  
- \headerbox{Parameters}{name=paras,column=4,span=2,above=bottom}{
+ \headerbox{Terms}{name=terms,column=0,span=2,below=biomodelsdatabase}{
  \begin{multicols}{2}
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/GlobalParametersHistogram.pdf}}}
-  
-  The majority of models have twenty or fewer global parameters. This suggests the models tend to have a low number of global parameters.
-
+ Suppose we have a chemical species, $X$. We model the rate of change of $X$ using the following ODE:
+ \begin{equation*}
+ \frac{dX(t)}{dt} = -k_1 X(t) + k_2 \;.
+ \end{equation*}
+ Where the amount of X is altered by the following processes:
+ \[
+ X \xrightarrow{k_1} \emptyset \quad\text{and}\quad \emptyset \xrightarrow{k_2} X \;.
+ \]
+ \bigskip
  
- {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 5mm, clip, scale=0.42]{Poster-images/LocalParametersHistogram.pdf}}}
- 
- The majority of models have fewer than ten local parameters. This suggests the models tend to have a low number of local parameters.
+  \begin{itemize}
+ \item The entity $X$ is a chemical species, for example an ion or a biological entity such as a protein binding site.
+   \item The process altering the amount of $X$ are reactions. 
+  \item $k_1$ and $k_2$ are the reaction parameters. Parameters are the numbers used in the desrciption of the rate laws of reactions.
+  \end{itemize}
  \end{multicols}
  }
- 
- \headerbox{Connections}{name=connections,column=0,below=r}{
+  
+  \headerbox{Connections}{name=connections,column=0,below=terms}{
  In the project, a species has a 'connection' for each reaction in which it is present. Consider the following reactions:
  \vspace{-0.5em}
  \begin{align*}
@@ -195,11 +191,11 @@
  
  The average number of connections is 5.72 (to 2 decimal places). 
  \begin{center}
- \includegraphics[trim = 5mm 5mm 5mm 5mm,clip,scale=0.3]{Poster-images/complex.png}
+ \includegraphics[trim = 5mm 5mm 5mm 5mm,clip,scale=0.35]{Poster-images/complex.png}
  \end{center}
  }
  
- \headerbox{SBO Terms}{name=sboterms,column=1,below=r}{
+ \headerbox{SBO Terms}{name=sboterms,column=1,below=terms}{
  Systems Biology Ontology (SBO) terms are used to provide additional information about model constituents.
 
  The possibility of using SBO terms to track which models certain species apperared in was explored. However, it was found that species do not necessarily have unique SBO terms 
@@ -220,16 +216,16 @@
   \vspace{1.0em}
   Similar problems were found in each model. Therefore, it is not possible    to use SBO terms to track where species appear.
  }
-  
-  \headerbox{Models and Species over Time}{name=modelsnspecs,column=4,span=2,below=terms}{
+ 
+ \headerbox{Models and Species over Time}{name=modelsnspecs,column=2,span=2,below=r}{
  \begin{multicols}{2}
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeModelsPlot.pdf}}}
  
- The increase in the number of curated models appears to be almost linear, suggesting that models are being added at a reasonably constant rate.
+ As shown above, the increase in the number of curated models appears to be almost linear, suggesting that models are being added at a reasonably constant rate.
  
  {\flushleft{\includegraphics[trim= 1.5mm 5mm 5mm 4.5mm, clip, scale=0.4]{Poster-images/CummulativeSpeciesPlot.pdf}}}
  
- There appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
+ As shown above, there appears to be a pattern that a large increase in the number of species in one year precedes a smaller increase in the next year.
 
  \end{multicols}
  }
